@@ -1,0 +1,31 @@
+.info{
+    height: 0%;
+    width: 100%;
+    margin: -10px 0 10px;
+    background: #5a1296;
+}
+    .info-icons{
+        height: 100%;
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .info.fx a{margin: 0 5%;}
+        .info-img{height: 80%;}
+
+    .i-on{  
+        animation: info-tab 500ms ease-in-out 0s 1 normal forwards;
+    }
+    @keyframes info-tab{
+        0%{height: 0%;}
+        100%{height: 10%;}
+    }
+
+    .i-off{ 
+        animation: info-tab-off 500ms ease-in-out 0s 1 reverse forwards;
+    }
+    @keyframes info-tab-off{
+        0%{height: 0%;}
+        100%{height: 10%;}
+    }
+

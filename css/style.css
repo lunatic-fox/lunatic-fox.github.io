@@ -1,0 +1,100 @@
+/*///////  General  //////*/
+body{
+    margin: 0;
+    font-family: sans-serif;
+    width: 100%;
+    background: #06090f;
+    color: #ffffff;
+}
+a:link{
+    color: #19b6ff;
+    text-decoration: none;
+}
+a:visited{color: #19b6ff;}
+.fx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blk{flex-direction: column;}
+/*///////  General  //////*/
+
+
+/*///////  Header  //////*/
+header{
+    height: 12%;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #2a0747;
+}
+    .logo{
+        max-height: 60%;
+        margin-left: 5%;
+    }
+    .gap{
+        width: 100%;
+    }
+    .options{
+        max-height: 50%;
+        margin-right: 3%;
+    }
+/*///////  Header  //////*/
+
+
+/*///////  Main //////*/
+main{
+    width: 100%;
+}
+
+/*///////  Lab Tests //////*//*
+
+    Some tests may be
+    conducted right here.
+    Proceed with caution!
+
+*//*/////  Lab Tests ////////*/
+
+    article{
+        margin: 5px 0;
+        padding: 1% 0;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 5px;
+        border: solid 1px #30363d;
+    }
+        .project-img{
+            max-height: 90px;
+            margin: 1% 5%;
+        }
+        .project-title{
+            text-align: center;
+            font-size: larger;
+            font-weight: 700;
+        }
+        .project-description{
+            margin: 10px 0;
+            width: 95%;
+            height: 100%;
+            font-size: smaller;
+            font-style: italic;
+            color: #8b959e;
+        }
+
+        .tag-box{
+            margin: 1px 10px;
+            color: #8b959e;
+        }
+            .language-description{
+                font-size: smaller; 
+            }
+            .lang-icon{
+                border-radius: 50%;
+                margin: 0 3px;
+                width: 10px;
+                height: 10px;
+            }
+                    
+/*///////  Main //////*/
+
+
+
