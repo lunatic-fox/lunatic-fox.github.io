@@ -11,7 +11,9 @@ function playTag(){
     for(i=0;i<=xy.length;i++){
         for(j=0;j<=vector.length;j++){
 
-        xy[i].innerHTML = xy[i].innerHTML.split(`#${vector[j]}`).join(`<div class="fx tag-box"><div class="language-description">${vector[j]}</div><div class="lang-icon ${vector[j]}"></div></div>`);
+        xy[i].innerHTML = xy[i].innerHTML.split(`#${vector[j]}`).join(`<div class="fx tag-box">
+        <div class="language-description">${vector[j]}</div>
+        <div class="lang-icon ${vector[j]}"></div></div>`);
         };
     };
 };
