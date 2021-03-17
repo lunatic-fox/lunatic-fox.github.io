@@ -49,8 +49,4 @@ id('off').style='display:none;';
 id('on').addEventListener('click',()=>{info.on();});
 id('off').addEventListener('click',()=>{info.off();});
 
-// That part makes that function to work. Error fixed!
 playTag();
-
-// let ops = document.querySelector('div [name = "tag"]');
-// console.log(ops.innerHTML)
