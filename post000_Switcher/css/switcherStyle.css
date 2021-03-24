@@ -1,0 +1,30 @@
+.switcher-box{
+    width: 100%;
+    height: 100px;
+    
+}
+.light{
+    width: 30%;
+    height: 100%;
+   
+}
+.off{
+    display: none;
+    height: 90%;
+}
+.on{ 
+    display: block; 
+    height: 90%;
+    margin-right: 5%;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 50%;
+    border-radius: 10px;
+    background-color: rgb(37, 37, 37);
+}
+.button img{
+    height: 90%;
+}

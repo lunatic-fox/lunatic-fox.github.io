@@ -6,6 +6,10 @@ body{
     background: #06090f;
     color: #ffffff;
 }
+p{
+    margin: 8px 5px;
+    text-indent: 10px;
+}
 a:link{
     color: #19b6ff;
     text-decoration: none;
@@ -24,7 +28,6 @@ a:visited{color: #19b6ff;}
 header{
     height: 12%;
     width: 100%;
-    margin-bottom: 10px;
     background: #2a0747;
 }
     .logo{
@@ -44,48 +47,62 @@ header{
 /*///////  Main //////*/
 main{
     width: 100%;
+    margin: 2% 0 10px 0;
 }
+    .title-box{
+            width: 90%;
+            max-width: 600px;
+        }
+        .mod{
+            width: 100%;
+            margin-bottom: 2%;
+            padding-right: 5%;
+            text-align: right;
+            font-family: monospace;
+            color: #1a477e;
+        }
+        .project-title{
+            margin: 0 5% 0 0;
+            text-align: center;
+            font-size: larger;
+            font-weight: 700;
+        }
+
+
     article{
-        margin: 5px 0;
-        padding: 1% 2% 1% 0;
+        margin: 20px 0;
+        padding: 1% 0;
         width: 90%;
         max-width: 600px;
         border-radius: 5px;
         border: solid 1px #30363d;
     }
-        .project-img{
-            max-height: 90px;
-            margin: 1% 5%;
-        }
-        .project-title{
-            text-align: center;
-            font-size: larger;
+        .project-subtitle{
+            font-size: 17px;
             font-weight: 700;
+            color: #66FFCC;
+            width: 100%;
         }
-        .project-description{
+        .project-text{
             margin: 10px 0;
             width: 95%;
             height: 100%;
-            font-size: smaller;
-            font-style: italic;
-            color: #8b959e;
+            font-size: 15px;
+            color: #c4c7c9;
         }
 
-        .tag-box{
-            margin: 1px 10px;
-            color: #8b959e;
-        }
-            .language-description{
-                font-size: smaller; 
-            }
-            .lang-icon{
-                border-radius: 50%;
-                margin: 0 3px;
-                width: 10px;
-                height: 10px;
-            }
-                    
+article img{
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 2px;
+}
+.f-text{
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    background: rgb(46, 46, 46);
+    border-radius: 5px;
+}
 /*///////  Main //////*/
-
 
 

@@ -1,0 +1,413 @@
+<html lang="pt-br, en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/002.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="css/switcherStyle.css">
+    <title>Star Light</title>
+
+    <meta name="author" content="Josélio Júnior">
+    <meta name="description" content="StarLight - Interruptor HTML, CSS JS.">
+    <meta name="keywords" content="desenvolvimento, programação, development, programming, javascript, js, css, html, switcher, interruptor">
+</head>
+<body class="fx blk">
+    
+
+    <!-- Header -->
+    <header class="fx">
+        <a style="margin-left: 5%;" href="https://joseliojunior.github.io/">
+            <img class="logo" src="img/011.png">
+        </a>
+        
+        <div class="gap"></div>
+        <img id="on" class="options" src="img/000.png">
+        <img id="off" class="options" src="img/000.png"> 
+    </header>
+    <!-- Header -->
+
+    <!-- Info -->
+    <div id="info" class="info fx">
+        <div class="fx info-icons">
+            <a href="https://www.linkedin.com/in/jos%C3%A9lio-de-souza-cavalcante-j%C3%BAnior-ba66791a3/">
+                <img class="info-img" src="img/007.png">
+            </a>
+            <a href="https://github.com/joseliojunior">
+                <img class="info-img" src="img/008.png">
+            </a>
+            <a href="https://www.artstation.com/josliojnior">
+                <img class="info-img" src="img/010.png">
+            </a>
+        </div>
+    </div>
+    <!-- Info -->
+
+
+    <main class="fx blk">
+             
+    <div class="fx blk title-box">
+        <div class="mod">
+            Criado por: Josélio Júnior<br>
+            Última modificação em: 24/03/2021
+        </div>
+        <div class="project-title">
+            Botão tipo interruptor para página web
+        </div>
+    </div>
+
+<!-- Start - New Topic -->
+        <article class="fx">
+                <div class="fx blk project-text">
+
+<div class="project-subtitle"> >> O que vamos fazer? </div>
+<span class="text-area">
+    Nesse pequeno projeto vamos estar criando um botão para página web que funciona como uma espécie de interruptor.
+
+    Em outras palavras quando apertarmos esse botão ele fará uma primeira ação e se apertarmos novamente ele irá fazer outra ação que desfaz a primeira.
+
+    Logo, podemos fazer a comparação a um interruptor.
+
+<div class="f-text" style="text-align:start; padding-left: 20px;">
+[!yellow]1. Apertamos a 1ª vez : A luz acende!
+[!yellow]2. Apertamos a 2ª vez : A luz apaga!
+[!yellow]3. Apertamos a 3ª vez : A luz acende!
+[!i][...E assim sucessivamente!]
+
+</div>    
+    Na prática faremos esse botão aqui para acender e apagar essa lâmpada.
+
+    Basta clicar no botão de play para testar.
+
+<div class="fx switcher-box"><div class="fx light"><img id="light-off" class="on" src="img/x000.png"><img id="light-on" class="off" src="img/x001.png"></div><div id="s-on" class="on button"><img src="postimg/play.png"></div><div id="s-off" class="off"><img src="postimg/play.png"></div></div>
+    Legal né? Vamos continuar!
+</span></div></article>
+<!-- End - New Topic --> 
+
+<!-- Start - New Topic -->
+<article class="fx">
+    <div class="fx blk project-text">
+</span>
+<div class="project-subtitle"> >> Quais linguagens e ferramentas serão usadas?</div>
+<span class="text-area">
+    Aqui usaremos a famosa trindade para [!i]front-end que é HTML, CSS e JavaScript.
+    Também farei este projeto usando o Visual Studio Code e o Google Chrome.
+</span></div></article>
+<!-- End - New Topic -->
+
+<!-- Start - New Topic -->
+<article class="fx">
+    <div class="fx blk project-text">
+</span>
+<div class="project-subtitle"> >> Requisitos!</div>
+<span class="text-area">
+    É super interessante que você tenha conhecimento em:
+    <div class="f-text">
+[s.18][!e34c26.b][HTML]
+[s.14][!dddddd.i][Como vincular CSS e JavaScript, como usar classes CSS e ids para JavaScript.]
+
+[s.18][!498BA7.b][CSS]
+[s.14][!dddddd.i][Como utilizar display e flexbox.]
+
+[s.18][!B7B73B.b][JavaScript]
+[s.14][!dddddd.i][Como adicionar eventos.]
+
+[s.18][!22A7F2.b][Visual Studio Code]
+[s.14][!dddddd.i][Utilização geral.]
+
+</div>
+
+    Caso você não tenha certeza se tem esses conhecimentos, não se preocupe, vou te guiar explicando o máximo que conseguir. Vamos tentar juntos ok?
+
+</span></div></article>
+<!-- End - New Topic -->
+
+<!-- Start - New Topic -->
+<article class="fx">
+    <div class="fx blk project-text">
+</span>
+<div class="project-subtitle"> >> Etapa 1 - Ambientando o projeto</div>
+<span class="text-area">
+    Vamos criar nossa pasta do projeto!
+
+</span>
+<img src="postimg/000.png">
+<span class="text-area">
+
+    Com a pasta criada vamos clicar com o botão direito do mouse nela e selecionar <i>Abrir com o Code</i>, dessa maneira já estaremos criando o ambiente para o nosso projeto.
+
+</span>
+<img src="postimg/001.png">
+<span class="text-area">
+
+    Quando o Visual Studio Code abrir será mais ou menos dessa maneira que ele estará.
+
+</span>
+<img src="postimg/002.png" >
+<span class="text-area">
+
+    Agora clicando do pequeno ícone da folha de papel vamos criar um novo arquivo.
+
+</span>
+<img src="postimg/003.png" >
+<span class="text-area">
+
+    Esse será o nosso arquivo chamado index.html. Você provavelmente já deve ter visto esse nome tanto como index.html quanto como home.html. Será ele que irá abrigar todo o nosso projeto e quando chegarmos na parte do JavaScript ele passa a ser reconhecido como [!i][document], guarde essa informação.
+
+</span>
+<img src="postimg/004.png">
+<span class="text-area">
+
+    O arquivo será aberto assim que você acaba de criá-lo pressionando enter.
+    Com isso basta digitar [!i]doc e apertar enter que o Visual Studio Code irá entender essa abreviação e criar uma base de página html automaticamente o que ajuda e muito.
+
+</span>
+<img src="postimg/005.png">
+<img src="postimg/006.png">
+<span class="text-area">
+
+    O [!3A73AB.i.b][&lt!DOCTYPE html&gt] informa ao navegador que o arquivo será um documento do tipo html, mas sua citação atualmente é opcional como podemos notar na ausência dessa declaração no código.
+
+    Lembra do que falei que o JavaScript reconhece o html como <i>document</i>? Então, esse é motivo básico.
+
+
+    Agora preciso que crie mais dois arquivos, um [!498BA7.b]style.css e um [!B7B73B.b]script.js. Depois disso você precisará vincular eles ao documento da seguinte forma.
+
+    Nesse caso a ordem importa, então você deve colocar o vínculo CSS no [!3A73AB.i.b][&ltlink&gt] dentro da [!3A73AB.i.b][&lthead&gt&lt/head&gt] e o [!3A73AB.i.b][&ltscript&gt&lt/script&gt] com o vínculo ao arquivo JavaScript após o <i style="color: #3A73AB;"><b>&lt/body&gt</b></i>.
+
+</span>
+<img src="postimg/007.png">
+<span class="text-area">
+    Terminando essa parte onde criamos nosso ambiente de projeto, nossos arquivos HTML, CSS e JavaScript, estamos prontos para prosseguir para a segunda etapa!
+
+</span>
+
+
+</div></article>
+<!-- End - New Topic -->
+
+<!-- Start - New Topic -->
+<article class="fx">
+    <div class="fx blk project-text">
+</span>
+<div class="project-subtitle"> >> Etapa 2 - Dando cara ao projeto</div>
+<span class="text-area">
+    Entre as tags <i style="color: #3A73AB;"><b>&ltbody&gt&lt/body&gt</b></i>, vamos estar criando nossos elementos no documento html.
+    
+        1. Crie uma <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i>.
+        2. Dentro desta primeira <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i>, crie mais duas outras.
+
+</span>
+<img src="postimg/008.png">
+<span class="text-area">
+
+        3. No [!3A73AB.i.b]&ltbody&gt usaremos a classe [!B06849.i.b]flex e na primeira [!3A73AB.i.b]&ltdiv&gt usaremos as classes <i style="color:#B06849"><b>flex</b></i>, [!B06849.i.b]marker e <i style="color:#B06849"><b>caixa-interruptor</b></i>, que iremos criar agora dentro do arquivo CSS.
+
+    
+
+    No arquivo [!498BA7.b]style.css estaremos configurando a tag <i style="color:B59655"><b>body</b></i> e criando as classes <i style="color:B59655"><b>.flex</b></i>, <i style="color:B59655"><b>.marker</b></i>, <i style="color:B59655"><b>.caixa-interruptor</b></i> e <i style="color:B59655"><b>.lampada</b></i> da seguinte forma.
+
+</span>
+<img src="postimg/009.png">
+<span class="text-area">
+
+    Abrindo o arquivo html no navegador (Google Chrome) ele estará desse jeito.
+
+</span>
+<img src="postimg/010.png">
+<span class="text-area">
+    
+    Estaremos usando agora essas cores mais chamativas para termos uma noção de onde está cada elemento dentro da página e após tudo estar no seu devido lugar iremos retirar essas cores.
+
+
+
+    Voltando ao documento html, dentro da <i style="color: #3A73AB;"><b>&ltdiv class="flex marker caixa-interruptor"&gt</b></i>, na primeira <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i> estaremos chamando a classe <i style="color:#B06849"><b>lampada</b></i> e na segunda <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i>  chamaremos a classe <i style="color:#B06849"><b>botao</b></i>.
+
+</span>
+<img src="postimg/011.png">
+<span class="text-area">
+    
+    E de volta ao arquivo CSS estaremos configurando a classe <i style="color:B59655"><b>.botao</b></i> e <i style="color:B59655"><b>.lampada</b></i>  desse jeito.
+
+</span>
+<img src="postimg/012.png">
+<span class="text-area">
+    
+    Deixando o nosso documento com essa carinha.
+
+</span>
+<img src="postimg/013.png">
+<span class="text-area">
+    
+    Lá no arquivo html estaremos chamando a classe <i style="color:#B06849"><b>flex</b></i> junto com a classe <i style="color:#B06849"><b>lampada</b></i> naquela primeira <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i> e dentro dela usaremos duas imagens, uma de uma lâmpada apagada e outra de uma lâmpada acesa.
+
+</span>
+<img src="postimg/014.png">
+<span class="text-area">
+    
+    Resultando em:
+</span>
+<img src="postimg/015.png">
+<span class="text-area">
+    
+    Para que não apareça as duas lâmpadas ao mesmo tempo, estaremos criando duas classes a <i style="color:#B06849"><b>aparecer</b></i> e a <i style="color:#B06849"><b>desaparecer</b></i> e vinculando a cada uma das lâmpadas da seguinte maneira.
+</span>
+<span class="text-area">
+
+    No HTML:
+</span>
+<img src="postimg/016.png">
+<span class="text-area">
+
+    No CSS:
+</span>
+<img src="postimg/017.png">
+<span class="text-area">
+
+    Resultando em:
+</span>
+<img src="postimg/018.png">
+<span class="text-area">
+
+    Iremos copiar a <i style="color: #3A73AB;"><b>&ltdiv&gt</b></i> do botão e isso fará com que aconteça algo semelhante às lâmpadas, pois estarão vinculados a mesma classe <i style="color:#B06849"><b>aparecer</b></i>. Daí basta vincular o segundo botão a classe <i style="color:#B06849"><b>desaparecer</b></i> e ficaremos com um único botão visível.
+
+</span>
+<img src="postimg/019.png">
+<img src="postimg/020.png">
+<span class="text-area">
+
+    No entanto, logo após vincularmos o segundo botão a classe <i style="color:#B06849"><b>desaparecer</b></i>, iremos identificar cada um dos elementos com uma id diferente. Então vamos nos atentar ao código.
+
+</span>
+<img src="postimg/021.png">
+<span class="text-area">
+
+    As ids são as seguintes:
+    <div class="f-text" style="text-align:start; padding-left: 20px;">
+[!#3A73AB.i]id="lampada-apagada" : Imagem da lâmpada apagada
+[!#3A73AB.i]id="lampada-acesa" : Imagem da lâmpada acesa
+[!#3A73AB.i]id="ligar" : Botão de ligar
+[!#3A73AB.i]id="desligar" : Botão de desligar
+    </div>
+    É importante lembrar das ids para você ter noção do que estaremos chamando ou colocando eventos quando partirmos logo, logo para a etapa em que usaremos o JavaScript.
+
+    Com tudo no devido lugar já podemos modificar nosso arquivo CSS e tirar as cores chamativas.
+
+</span>
+<img src="postimg/022.png">
+<span class="text-area">
+
+    Resultando em:
+</span>
+<img src="postimg/023.png">
+<span class="text-area">
+
+    Chegamos na reta final, agora basta colocarmos os eventos em JavaScript e terminamos!
+
+</span>
+</div></article>
+<!-- End - New Topic -->
+<!-- Start - New Topic -->
+<article class="fx">
+    <div class="fx blk project-text">
+</span>
+<div class="project-subtitle"> >> Etapa 3 - Colocando ações no projeto</div>
+<span class="text-area">
+
+    Chegamos na tão aguardada hora de fazer esse projeto funcionar!
+    Essa é uma etapa menor, porém não menos importante. Então vamos lá!
+
+    A primeira coisa a fazer é criar quatro constantes no nosso arquivo JavaScript <i style="color:#B7B73B;"><b>script.js</b></i>, elas serão responsáveis por apontar os elementos html dentro do nosso código em JavaScript.
+
+</span>
+<img src="postimg/024.png">
+<span class="text-area">
+
+    Coloquei o nome das constantes bem sugestivo para que a gente não perca de vista a qual elementos estamos nos referindo.
+
+    Aqui utilizei o método <i style="color:#8E8863;"><b>getElementById( )</b></i>, que nada mais é do que "pegar o elemento pela id". Com isso, dentro dos parênteses escrevemos o nome da id assim como está escrito no arquivo html. Dessa forma, toda vez que citarmos as contantes estaremos nos referindo a id do elemento html que elas pegaram.
+
+    Outra maneira de fazer essa captura de elemento html pelo JavaScript é através do método <i style="color:#8E8863;"><b>querySelector( )</b></i>, onde a única diferença é que você terá que escrever o nome da id desse jeito <i style="color:#B06849"><b>' #ligar '</b></i>, pois como o querySelector é inespecífico para id, já que ele pode fazer referência a várias coisas como, por exemplo, classes CSS e elementos HTML, sendo assim necessário o uso de [!#b06849.b.i]# para falar para o método que estamos nos referindo a uma id. Sendo igual ao jeito que chamamos id em CSS.
+
+    Logo após as constantes, pule uma linha para criarmos esse evento.
+
+</span>
+<img src="postimg/025.png">
+<span class="text-area">
+
+    Traduzindo a lógica do código é basicamente assim:
+
+<div class="f-text" style="text-align:start; padding-left: 20px;">
+[!yellow]1. Capturar elemento HTML com a id 'ligar'!
+[!yellow]2. Colocar um método para ouvir um evento!
+[!yellow]3. Tipo de evento: clique!
+
+</div>
+    
+    Assim sendo após o 'click', adicionamos o que chamamos de função anônima que tem a seguinte sintaxe: 
+
+<div class="f-text" style="font-family: monospace;">
+[s.30][!b.i][(  )<span style="color:#2E79B2">=></span>{ }]
+
+</div>
+    O motivo de parecer uma setinha nas imagens do código é porque a fonte que estou usando aqui aceita ligadura daí ela fica desse jeitinho, mas caso a fonte que esteja utilizando não aceite ligadura é um sinal de igual e um sinal de maior que que é utilizado.
+
+    Dentro das chaves colocaremos o algoritmo do que ocorrerá quando o evento for chamado através do clique. Então, se liga no código.
+    
+</span>
+<img src="postimg/026.png">
+<span class="text-area">
+
+    A novidade aqui é o [!#2E79B2.b.i]classList que é um método onde podemos chamar e modificar classes de um elemento. Sendo assim, lembra que os elementos que estamos chamando pelas ids tinham classes onde aparecia ou desaparecia algo? Aqui vamos alterar as classes de cada um deles para criar o nosso efeito de interruptor. 
+
+    Agora traduzindo esse pequeno algoritmo temos o seguinte:
+    <div class="f-text" style="text-align:start; padding-left: 20px;">
+[!yellow]1. A classe de lampada-apagada passa a ser desaparecer!
+[!yellow]2. A classe de lampada-acesa passa a ser aparecer!
+[!yellow]3. A classe de ligar passa a ser desaparecer!
+[!yellow]4. A classe de desligar passa a ser aparecer botao!
+
+</div>
+    Em outras palavras:
+    <div class="f-text" style="text-align:start; padding-left: 20px;">
+[!yellow]1. Não exiba a imagem da lâmpada apagada!
+[!yellow]2. Exiba a imagem da lâmpada acesa!
+[!yellow]3. Não exiba o botão de ligar!
+[!yellow]4. Exiba o botão de desligar!
+    </div>
+    Você já pode testar no navegador seu projeto, mas ainda não está pronto, pois o botão de desligar está sem ação nenhuma.
+
+    Para isso basta copiar o método de ouvir eventos do botão de ligar, mudar para o botão de desligar e alternar o algoritmo. Vamos ver na prática:
+
+</span>
+<img src="postimg/027.png">
+<span class="text-area">
+
+    Agora criamos um algoritmo que faz a função inversa do botão de ligar criando um efeito de laço sem usar um laço de programação real.
+
+    Traduzindo o algoritmo do botão desligar teremos:
+    <div class="f-text" style="text-align:start; padding-left: 20px;">
+[!yellow]1. Exiba a imagem da lâmpada apagada!
+[!yellow]2. Não exiba a imagem da lâmpada acesa!
+[!yellow]3. Exiba o botão de ligar!
+[!yellow]4. Não exiba o botão de desligar!
+    </div>
+    Acredite ou não acabamos o projeto!!!
+    [s.20]Parabéns!!!
+
+    Espero muito que tenha conseguido realizá-lo!!!
+
+    Ele é bem versátil e pode ser utilizado em diferentes contextos numa página web, então use toda sua criatividade para implementar esse conhecimento em outras coisas que gostar.
+    
+</span>
+
+
+</div></article>
+<!-- End - New Topic -->
+
+    </main>
+</body>
+<script src="js/script.js"></script>
+<script src="js/switcherScript.js"></script>
+</html>
