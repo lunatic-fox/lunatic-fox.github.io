@@ -31,9 +31,8 @@ header{
         max-height: 60%;
         height: 60%;
     }
-    .gap{
-        width: 100%;
-    }
+    .gap{width: 100%;}
+    
     .options{
         max-height: 50%;
         margin-right: 3%;
