@@ -1,0 +1,32 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:br.com.temperatureconverter////PointingToDeclaration/app/br.com.temperatureconverter/index.html
+$dokka.location:br.com.temperatureconverter/Converter.Companion///PointingToDeclaration/app/br.com.temperatureconverter/-converter/-companion/index.html
+$dokka.location:br.com.temperatureconverter/Converter.Companion/GREY/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/-companion/-g-r-e-y.html
+$dokka.location:br.com.temperatureconverter/Converter.Companion/K/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/-companion/-k.html
+$dokka.location:br.com.temperatureconverter/Converter.Companion/WHITE/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/-companion/-w-h-i-t-e.html
+$dokka.location:br.com.temperatureconverter/Converter///PointingToDeclaration/app/br.com.temperatureconverter/-converter/index.html
+$dokka.location:br.com.temperatureconverter/Converter/Converter/#android.widget.TextView#android.widget.EditText#android.widget.TextView#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button/PointingToDeclaration/app/br.com.temperatureconverter/-converter/-converter.html
+$dokka.location:br.com.temperatureconverter/Converter/cTemp/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/c-temp.html
+$dokka.location:br.com.temperatureconverter/Converter/conversion/#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/app/br.com.temperatureconverter/-converter/conversion.html
+$dokka.location:br.com.temperatureconverter/Converter/convertFromQuestion/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/convert-from-question.html
+$dokka.location:br.com.temperatureconverter/Converter/convertToQuestion/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/convert-to-question.html
+$dokka.location:br.com.temperatureconverter/Converter/fromC/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/from-c.html
+$dokka.location:br.com.temperatureconverter/Converter/fromF/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/from-f.html
+$dokka.location:br.com.temperatureconverter/Converter/fromK/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/from-k.html
+$dokka.location:br.com.temperatureconverter/Converter/iTemp/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/i-temp.html
+$dokka.location:br.com.temperatureconverter/Converter/mTemp/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/m-temp.html
+$dokka.location:br.com.temperatureconverter/Converter/maxValue/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/max-value.html
+$dokka.location:br.com.temperatureconverter/Converter/mirror/#kotlin.Int?/PointingToDeclaration/app/br.com.temperatureconverter/-converter/mirror.html
+$dokka.location:br.com.temperatureconverter/Converter/refreshToState/#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button/PointingToDeclaration/app/br.com.temperatureconverter/-converter/refresh-to-state.html
+$dokka.location:br.com.temperatureconverter/Converter/setButtonStateFrom/#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button#android.widget.Button/PointingToDeclaration/app/br.com.temperatureconverter/-converter/set-button-state-from.html
+$dokka.location:br.com.temperatureconverter/Converter/setButtonStateTo/#android.widget.Button#android.widget.Button#android.widget.Button/PointingToDeclaration/app/br.com.temperatureconverter/-converter/set-button-state-to.html
+$dokka.location:br.com.temperatureconverter/Converter/toC/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/to-c.html
+$dokka.location:br.com.temperatureconverter/Converter/toF/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/to-f.html
+$dokka.location:br.com.temperatureconverter/Converter/toK/#/PointingToDeclaration/app/br.com.temperatureconverter/-converter/to-k.html
+$dokka.location:br.com.temperatureconverter/MainActivity///PointingToDeclaration/app/br.com.temperatureconverter/-main-activity/index.html
+$dokka.location:br.com.temperatureconverter/MainActivity/MainActivity/#/PointingToDeclaration/app/br.com.temperatureconverter/-main-activity/-main-activity.html
+$dokka.location:br.com.temperatureconverter/MainActivity/b/#/PointingToDeclaration/app/br.com.temperatureconverter/-main-activity/b.html
+$dokka.location:br.com.temperatureconverter/MainActivity/onCreate/#android.os.Bundle?/PointingToDeclaration/app/br.com.temperatureconverter/-main-activity/on-create.html
+br.com.temperatureconverter
+
