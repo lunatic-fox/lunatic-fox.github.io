@@ -149,14 +149,12 @@ main{
         }
         
         #content-description {
-            width: 60%;
-            /* margin-inline-end: 20px;
-            margin-bottom: 10px; */
+            width: 100%;
             font-family: monospace;
             text-align: end;
             font-weight: 700;
-            font-size: medium;
-            color: #1a477e;
+            font-size: 0.8rem;
+            color: #3288f1;
         }
         #content-title-card {
             margin: 0 -1%;
