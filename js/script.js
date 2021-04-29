@@ -1,5 +1,7 @@
 // To get a element by id with less code.   
-function id(id){return document.getElementById(id);};
+function id(id){
+    return document.getElementById(id);
+};
 
 // To replace some tags with a chunk of HTML code...
 /* 
