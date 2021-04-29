@@ -33,23 +33,6 @@ function notFound() {
     </div>`;
 };
 
-// function createScript(path) {
-//     if (path != '') {
-//         const node = document.createElement('script');
-//         node.id = 'temp-script';
-//         node.src = path;
-//         document.body.appendChild(node);
-//     };
-// };
-
-// function removeScript(path) {
-//     if (path != '') {
-//         id('content-back').addEventListener('click', ()=> {
-//             document.body.removeChild(id('temp-script'));
-//         });
-//     }
-// };
-
 function loadFeatures(path) {
     if (path != '') {
         const articles = document.getElementsByTagName('article');
@@ -70,15 +53,27 @@ function loadFeatures(path) {
             
             for(i = 0; i < articles.length; i++) {
                 articles[i].classList = 'fx';
-                //articles[i].style.display = 'block';
             };
 
             content.classList = 'gone';
             content.innerHTML = '';
         });
     } else {
+        const articles = document.getElementsByTagName('article');
+        for(i = 0; i < articles.length; i++) {
+            articles[i].classList = 'gone';
+        };
+
+        const content = id('content');
+        content.classList = 'fx blk';
+
         id('content-back').addEventListener('click', ()=> {
-            console.log('no features!')
+            for(i = 0; i < articles.length; i++) {
+                articles[i].classList = 'fx';
+            };
+
+            content.classList = 'gone';
+            content.innerHTML = '';
         });
     };
 };
@@ -93,8 +88,6 @@ function content(path) {
                 document.getElementById('content-body').innerHTML = requestContent.responseText;
 
                 playText();
-
-                
 
         } else if (requestContent.readyState == 4
             && requestContent.status == 404){
@@ -119,10 +112,11 @@ function requestJSON(from) {
             contentConstructor(obj.author, obj.date, obj.title);
             content(obj.contentPath);
 
-
             ///////////////////////
-            loadFeatures(obj.scriptPath);
-            //////////////////
+            setTimeout(() => {
+                loadFeatures(obj.scriptPath);
+            }, 200);
+            ///////////////////////
 
         } else if (requestHeader.readyState == 4 
             && requestHeader.status == 404) {

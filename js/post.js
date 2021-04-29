@@ -12,5 +12,3 @@ function playText(){
         textArea[i].innerHTML.split(/\s{4}/).join(`&nbsp&nbsp&nbsp&nbsp`);
     };
 };
-
-//playText();
