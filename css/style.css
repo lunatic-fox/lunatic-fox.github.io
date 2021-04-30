@@ -111,7 +111,7 @@ main{
 .gone { display: none; }
 #content {
     margin: 5px 0;
-    padding: 1%;
+    /* padding: 1%; */
     width: 90%;
     max-width: 600px;
     border-radius: 5px;
@@ -133,6 +133,7 @@ main{
             font-weight: 700;
         }
         .not-found-msg {
+            text-indent: 20px;
             padding: 0 5% 5% 5%;
         }
     #content-header {
@@ -145,7 +146,10 @@ main{
         #content-back {
             height: 40px;
             width: 40px;
-            border-radius: 4px;
+            border-radius: 4px 0 50%;
+            padding: 2px 8px 8px 2px;
+            margin: -5px 0 0 -5px;
+            background-color: #19b6ff65;
         }
         
         #content-description {
@@ -157,16 +161,16 @@ main{
             color: #3288f1;
         }
         #content-title-card {
-            margin: 0 -1%;
-            justify-content: flex-start;
             align-items: flex-end;
+            padding: 1%;
+            /* margin: 0 -1%; */
             background: #1b3d63;
             height: 100px;
         }
         #content-title {
-            margin-inline-start: 10px;
+            text-align: center;
             font-weight: 700;
-            font-size: large;
+            font-size: x-large;
         }
     #content-body { 
         margin: 10px;

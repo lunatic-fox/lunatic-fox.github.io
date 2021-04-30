@@ -1,7 +1,10 @@
 {
     "author": "Josélio Júnior",
-    "date": "29/04/2021",
+    "date": "30/04/2021",
     "title": "Botão tipo interruptor para página web",
-    "contentPath": "fragments/p0002/p0002.html",
-    "scriptPath": "fragments/p0002/switcherScript.js"
+    "titleCardColor": "#005a2d",
+    "path": {
+        "content": "fragments/p0002/p0002.html",
+        "script": "fragments/p0002/switcherScript.js"
+    }
 }
