@@ -45,16 +45,17 @@ function errorConstructor(image, title, message) {
 };
 
 function contentBackButton(removeScript) {
+    const articles = document.getElementsByTagName('article');
     function goBack() {
         for(i = 0; i < articles.length; i++) {
-            articles[i].classList = 'fx transition';
+            articles[i].removeAttribute('class');
         };
         content.classList = 'gone';
         content.innerHTML = '';
     };
 
     const contentBack = document.getElementById('content-back');
-    const articles = document.getElementsByTagName('article');
+    
 
     if (removeScript != null) {
         contentBack.addEventListener('click', ()=> {
