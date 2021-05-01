@@ -137,8 +137,8 @@ function contentProvider(path) {
 
     const requestContent = new XMLHttpRequest();
     requestContent.open('GET', path);
+    requestContent.onerror = ()=> { noContent('offline'); }; 
     requestContent.send();
-
     requestContent.onreadystatechange = function() {
 
         if (this.readyState === 4) {
@@ -163,9 +163,9 @@ function contentProvider(path) {
 
 function requestJSON(from) {
     const requestHeader = new XMLHttpRequest();
-    requestHeader.open('GET', `json/${from}.json`);
+    requestHeader.open('GET', `json/${from}.json`); 
+    requestHeader.onerror = ()=> { noContent('offline'); };  
     requestHeader.send();
-    requestHeader.onerror = noContent('offline');
     requestHeader.onreadystatechange = function() {
         if (this.readyState === 4) {
             switch (this.status) {
@@ -183,7 +183,7 @@ function requestJSON(from) {
                     break;
             }
         };
-    };      
+    };  
 };
 
 requestPost('p0002');
