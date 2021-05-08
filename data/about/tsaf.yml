@@ -21,12 +21,13 @@ data content:
     http://www.ceagesp.gov.br/wp-content/uploads/2015/05/produtos_epoca.pdf
 ---
 ---
-list of abbreviations:
-  d: diversos
-  f: frutas
-  l: legumes
-  p: pescados
-  v: verduras
+list of abbreviations: 
+  #   PT-BR   |   EN
+  d: diversos | others
+  f: frutas   | fruits
+  l: legumes  | vegetables
+  p: pescados | fish
+  v: verduras | leafy vegetables
 ---
 ---
 global array structure: >
