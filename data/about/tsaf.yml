@@ -20,3 +20,38 @@ data content:
   original content link: 
     http://www.ceagesp.gov.br/wp-content/uploads/2015/05/produtos_epoca.pdf
 ---
+---
+list of abbreviations:
+  d: diversos
+  f: frutas
+  l: legumes
+  p: pescados
+  v: verduras
+---
+---
+global array structure: >
+  [0, 1, 2, ... 11, "P"]
+
+structure description: >
+  -- PT-BR
+  Cada posição retorna o 
+  valor de estabilidade de
+  safra, exceto a última.
+
+    0 - safra fraca
+    1 - safra estável
+    2 - safra forte
+    "P" - produto
+  
+  -- EN
+  Each position returns the
+  correspondent harvest 
+  stability value, except 
+  the last one.
+  
+    0 - poor harvest
+    1 - steady harvest
+    2 - heavy harvest
+    "P" - product
+
+---

@@ -20,9 +20,18 @@ data content:
 ---
 ---
 list of abbreviations:
-  ac: mid-upper arm circumference
-  tsf: triceps skinfold
-  amc: and mid-arm muscle circumference
+  ac: >
+    mid-upper arm circumference 
+    unit: centimeters
+
+  tsf: >
+    triceps skinfold
+    unit: milimeters
+
+  amc: >
+    mid-arm muscle circumference
+    unit: centimeters
+
   p5: percentile 5
   p10: percentile 10
   p25: percentile 25
@@ -30,4 +39,13 @@ list of abbreviations:
   p75: percentile 75
   p90: percentile 90
   p95: percentile 95
+---
+---
+global array structure: >
+  [0, 1, 2, ... 74]
+
+structure description: >
+  Each position returns the
+  correspondent measurement
+  to the age.
 ---

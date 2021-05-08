@@ -1,9 +1,9 @@
 {
-    "__about__": "https://joseliojunior.github.io/data/about/tsaf.yml",
+    "__about__": "https://raw.githubusercontent.com/joseliojunior/joseliojunior.github.io/main/data/about/tsaf.yml",
     "info": {
         "citation": "CEAGESP, 2015-2019"
     },
-    "diversos": [
+    "d": [
         [1,0,0,0,0,0,0,2,2,2,2,1,"Alho Nacional"],
         [1,2,2,1,1,1,0,0,0,0,0,2,"Alho Estrang. Argentino"],
         [0,0,0,1,2,1,2,2,2,2,2,1,"Alho Estrang. Chinês"],
@@ -24,7 +24,7 @@
         [2,1,2,1,0,2,1,0,1,0,0,1,"Ovos Vermelhos"],
         [0,0,0,1,1,2,1,0,0,0,0,0,"Pinhão"]
     ],
-    "frutas": [
+    "f": [
         [0,1,1,2,2,2,1,1,1,2,1,1,"Abacate Avocado"],
         [0,0,0,0,0,0,0,0,2,2,2,2,"Abacate Breda/Margarida"],
         [2,2,0,0,0,0,0,0,0,0,0,0,"Abacate Fucks/Geada"],
@@ -125,7 +125,7 @@
         [1,1,2,2,2,1,0,0,0,0,0,0,"Uva Estr. Red Globe"],
         [1,1,2,2,1,0,0,0,0,0,0,0,"Uva Estr. Thompson"]
     ],
-    "legumes": [
+    "l": [
         [1,2,2,2,1,0,0,0,0,0,0,1,"Abóbora D'Agua"],
         [2,2,2,2,2,2,1,1,1,1,1,0,"Abóbora Japonesa"],
         [0,1,2,2,1,1,1,2,2,2,1,0,"Abóbora Moranga"],
@@ -176,7 +176,7 @@
         [1,0,0,1,0,0,0,0,1,2,2,2,"Vagem Macarrão"],
         [1,1,0,0,0,0,2,2,2,2,1,1,"Vagem Manteiga"]
     ],
-    "pescados": [
+    "p": [
         [0,0,0,0,0,0,0,2,0,0,0,0,"Abrotea"],
         [1,0,1,1,0,1,2,2,0,0,1,0,"Anchovas"],
         [0,2,2,0,0,1,1,2,1,1,1,2,"Atum"],
@@ -233,7 +233,7 @@
         [1,0,2,1,1,1,1,1,2,0,0,0,"Xaréu"],
         [1,2,1,2,1,0,0,2,0,2,1,2,"Xixarro"]
     ],
-    "verduras": [
+    "v": [
         [0,1,2,2,1,1,0,0,0,1,1,0,"Acelga"],
         [0,0,1,1,0,0,1,2,2,2,1,2,"Agrião"],
         [2,2,2,1,1,0,0,0,1,1,1,2,"Alface Americana"],
