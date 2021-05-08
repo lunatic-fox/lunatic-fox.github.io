@@ -1,0 +1,22 @@
+language: pt-br / en
+---
+title: tsaf
+
+url: https://joseliojunior.github.io/data/tsaf.json
+
+description:
+  Tabela de sazonalidade dos produtos comercializados
+  no ETSP (Entreposto Terminal São Paulo) entre 2015 e 2019.
+
+author:
+  # Who created the .json data file.
+  name: C. Júnior, Josélio de S.
+  github page: https://github.com/joseliojunior
+
+data content:
+  # Who created the table where the data comes from.
+  author: Companhia de Entrepostos e Armazéns Gerais de São Paulo.
+  abbreviation: CEAGESP
+  original content link: 
+    http://www.ceagesp.gov.br/wp-content/uploads/2015/05/produtos_epoca.pdf
+---

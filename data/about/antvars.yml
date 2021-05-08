@@ -1,0 +1,33 @@
+language: en
+---
+title: antvars
+
+url: https://joseliojunior.github.io/data/antvars.json
+
+description: 
+  Anthropometric reference about 
+  mid-upper arm circumference, triceps skinfold
+  and mid-arm muscle circumference.
+
+author:
+  # Who created the .json data file.
+  name: C. Júnior, Josélio de S.
+  github page: https://github.com/joseliojunior
+
+data content:
+  # Who created the article where the data comes from.
+  author: Frisancho, A. R.
+---
+---
+list of abbreviations:
+  ac: mid-upper arm circumference
+  tsf: triceps skinfold
+  amc: and mid-arm muscle circumference
+  p5: percentile 5
+  p10: percentile 10
+  p25: percentile 25
+  p50: percentile 50
+  p75: percentile 75
+  p90: percentile 90
+  p95: percentile 95
+---
