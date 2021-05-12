@@ -14,6 +14,7 @@
     font-weight: 700;
     color: #66FFCC;
     width: 100%;
+    white-space: nowrap;
 }
 .f-text{
     padding: 5px;

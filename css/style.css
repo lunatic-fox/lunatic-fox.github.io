@@ -82,11 +82,9 @@ main{
             width: 100%;
             margin-right: -45px;
         }
-        .tag-box{
-            margin: 1px 10px;
-            color: #8b959e;
-        }
-            .language-description{
+            .tag-box {
+                margin: 1px 10px;
+                color: #8b959e;
                 font-size: smaller; 
             }
             .lang-icon{
