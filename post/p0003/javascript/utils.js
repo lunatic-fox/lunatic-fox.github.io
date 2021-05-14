@@ -3,14 +3,17 @@
  * @file A collection of utilities in ECMAScript
  * @copyright Josélio de S. C. Júnior 2021
  * @license AGPL-3.0-or-later
+ * Online tool used: <https://regexr.com/>
  */
 
 /**
  * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
- * @requires <input type="text" ... >
- * @description Makes a type text HTMLInputElement to work similar as a type number HTMLInputElement and allows to set the maximum range of digits of an integer or of a decimal number.
+ * @description Makes a type text HTMLInputElement to work similar as a type number HTMLInputElement and allows
+ * to set the maximum range of digits of an integer or of a decimal number.
+ * 
  * @param {HTMLInputElement} input The input element where this function will be working on.
- * @param {Number} intMaxLength Number that specifies the maximum number of digits of the integer range.
+ * @param {Number?} integerMaxLength Number that specifies the maximum length of the integer range. 
+ * When setted as null, the maximum length will be set as 1 by default.
  * @param {String?} numberType String that specifies if it is a decimal, a signed decimal or a signed number.
  * 
  * When setted as 'digit' - allows just numbers;
@@ -20,59 +23,44 @@
  * When setted as 'decimal' - allows decimal number;
  * 
  * When setted as 'decimal|signed' or vice-versa - allows negative decimal number.
+ * 
+ * When it is null - it will be assumed as integer number.
  * @param {Number?} decimalMaxLength Number that specifies the maximum number of digits of the decimal range.
- * When it is null, but decimal is true, the maximum number of digits of decimal range will be set by default as 2.
+ * When it is null, but decimal is true, the maximum number of digits of decimal range will be set as 2 by default.
  */
-export function numberInput(input, intMaxLength, numberType, decimalMaxLength) {
+export function numberInput(input, integerMaxLength, numberType, decimalMaxLength) {
 
-    input.addEventListener('keydown', (e)=> {        
+    input.addEventListener('input', ()=> {
 
-    setTimeout(() => {
-        // Turns the value into 0 if the 0 digit is typed more than once without a dot sign or does nothing if number type is 'digit'.
-        if (numberType != 'digit' && input.value.match(/(?<![0-9]|\.)00/))
-        return input.value = '0';
+        const value = input.value;
 
-        // Turns the value into minus sign if after it a dot sign is typed.
-        if (input.value.match(/\-\./))
-        return input.value = '-';
-    }, 0);
+        // Allow only digits, dot sign and minus sign.
+        const ndmp = /[^0-9.-]|(?<=\d+\.\d+)\.|(?<!\d+)\.|\.(?=\-)|(?<=.)\-/g;
+        if (value.match(ndmp))
+        return input.value = value.replace(ndmp, '');
 
-        const v = input.value;
+        // If it is not a 'digit' number type, allow '0' to be typed just once before a dot sign.
+        const zp = /(?<![0-9]|\.)0+(?=0)|(?<!\..*?)0(?=[1-9])(?!\.)/g;
+        if ((numberType == null || !numberType.match(/digit/)) && value.match(zp))
+        return input.value = value.replace(zp, '');
 
-        const d = numberType != null && numberType.match(/decimal/) ? '' : '.';
-        const m = numberType != null && numberType.match(/signed/) ? '' : '-';
+        // Integer range.
+        const inr = integerMaxLength == null ? 1 : integerMaxLength;
         
-        // Locks or unlocks dot and minus sign keys depending of the result of the last two constants above.
-        if (e.key == d || e.key == m) 
-        return e.preventDefault();
+        // Decimal range.
+        const dnr = decimalMaxLength == null ? 2 : decimalMaxLength;
 
-        // Blocks the dot key to be typed just once.
-        if (v.match(/\./) && e.key == '.')
-        return e.preventDefault();
-    
-        // Blocks the minus key to be typed just once and just before a number.
-        if (v.match(/\-|\d+/) && e.key == '-')
-        return e.preventDefault();
+        // Allows minus sign if 'signed' is a number type.
+        const sgn = numberType != null && numberType.match(/signed/) ? '' : `|\\-`;
 
-        const iP = new RegExp(`(?<![0-9]|\\.)\\d{${intMaxLength}}(?!\\.|[0-9])`);
-
-        // Blocks the maximum range of digits of an integer number.
-        if (v.match(iP) && e.key.match(/[0-9]/))
-        return e.preventDefault();
-
-        const dL = decimalMaxLength == null ? 2 : decimalMaxLength;
-        const dP = new RegExp(`\\d{1,${intMaxLength}}\\.\\d{${dL}}`);
-
-        // Blocks the maximum range of digits of a decimal number.
-        if (v.match(dP) && e.key.match(/[0-9]/))
-        return e.preventDefault();
-     
-        // Allows that keys to be listened as default.
-        if (e.key.match(/Backspace|Delete|ArrowLeft|ArrowRight|Home|End/))
-        return true;
-
-        // Unlistens all keys, except the ones allowed before, digits keys, dot sign key and minus sign key.
-        if (!e.key.match(/[0-9]|\.|\-/)) 
-        return e.preventDefault();
-    }); 
+        // Maximum integer and decimal ranges length.
+        const dp = new RegExp(`(?<=\\d{${inr}})(?<!\\.\\d+)\\d+|(?<=\\.\\d{${dnr}})\\d+${sgn}`);
+        if (numberType != null && numberType.match(/decimal/) && value.match(dp))
+        return input.value = value.replace(dp, '');
+        
+        // Maximum integer or digit range length.
+        const ip = new RegExp(`(?<=\\d{${inr}})\\d+|\\.${sgn}`);
+        if ((numberType == null || numberType.match(/(?<!decimal\|)signed(?!\|decimal)|digit/)) && value.match(ip))
+        return input.value = value.replace(ip, '');
+    });
 };
