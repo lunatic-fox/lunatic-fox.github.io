@@ -1,0 +1,50 @@
+{
+    "c1": {
+        "title": "Postagem piloto",
+        "description": "Teste de funcionamento da página.",
+        "href": null,
+        "tags": "javascript, html, css, kotlin"
+    },
+    "c2": {
+        "title": "Postagem piloto 2",
+        "description": "Teste de funcionamento da página.",
+        "href": null,
+        "tags": "typescript, java, c, c-sharp, c++, e"
+    },
+    "c3": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    },
+    "c4": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    },
+    "c5": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    },
+    "c6": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    },
+    "c7": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    },
+    "c8": {
+        "title": null,
+        "description": null,
+        "href": null,
+        "tags": null
+    }
+}
