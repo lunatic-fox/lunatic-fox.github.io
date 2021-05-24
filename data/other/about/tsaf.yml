@@ -2,7 +2,7 @@ language: pt-br / en
 ---
 title: tsaf
 
-url: https://joseliojunior.github.io/data/tsaf.json
+url: https://joseliojunior.github.io/data/other/tsaf.json
 
 description:
   Tabela de sazonalidade dos produtos comercializados
