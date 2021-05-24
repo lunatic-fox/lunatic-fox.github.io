@@ -70,14 +70,6 @@ class post {
 
     static blankCard = `<div style="width: 90%; margin: 10px;"><div></div>`;
 
-    /**
-     * 
-     * @param {string?} title 
-     * @param {string?} description 
-     * @param {string?} href 
-     * @param {string?} tags 
-     * @returns {string}
-     */
     static card(title, description, href, tags) {
 
         let key = false;
