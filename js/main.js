@@ -1,52 +1,63 @@
-const info = document.getElementById('info');
-const on = document.getElementById('on');
-const off = document.getElementById('off');
+import {data, layout, post} from './classes.js';
 
-/**
- * That function search for all \<div name="tag">...\</div> and
- * then replace what's inside that element with a chunk of code
- * that shows the programming language used inside the project
- * and a lil' icon colored with color pattern of programming
- * languages used in GitHub.
- */
-function playTag(){
-    const tagLocation = document.querySelectorAll('div [name = "tag"]');
+const def = {
+    starThemeBtn : document.getElementById('star-theme-btn'),
+    themeLinkElement : document.getElementById('theme'),
+    cardBoxesOrientation : document.getElementsByName('post-orientation'),
+    pageStatus : 1,
+    pageMax : await data.size()
+};
 
-    const tagName = ['Kotlin','JavaScript','JSON','CSS','HTML','Java'];
+class main {
 
-    for(i=0;i<tagLocation.length;i++){        
-        for(j=0;j<tagName.length;j++){
-            tagLocation[i].innerHTML = tagLocation[i].innerHTML.split(`#${tagName[j]}`).join(
-                `<div class="fx tag-box">
-                    <div class="language-description">
-                        ${tagName[j]}
-                    </div>
-                    <div class="lang-icon ${tagName[j]}"></div>
-                </div>`
-            );    
-        };
+    static setLayout() {
+        layout.windowContext(def.cardBoxesOrientation);
+        layout.themePicker(def.starThemeBtn, def.themeLinkElement);
+        layout.footer;
     };
+
+    static pageSelector(element, direction) {
+        element.addEventListener('click', async ()=> {
+            if (direction && def.pageStatus < def.pageMax) def.pageStatus++;
+
+            if (!direction && def.pageStatus > 1)  def.pageStatus--;
+
+            await this.getData(def.pageStatus);
+            layout.windowContext(def.cardBoxesOrientation);
+        });
+    };
+
+    static selector(goAhead, goBack) {
+        this.pageSelector(goAhead, true);
+        this.pageSelector(goBack, false);
+    };
+
+    static async getData(page) {
+        const url = `http://joseliojunior.github.io/data/post/p${page ??= 1}.json`;
+        const data = await fetch(url);
+    
+        if (data.status == 404)
+        return post.error('content');
+    
+        const response = await data.json();
+        return post.page('content', response);
+    };
+    
+    static async setData() {
+        await this.getData();
+        this.setLayout();    
+    };    
+
+    static async loadEnd() {
+        await this.setData();
+        return document.getElementById('transition').remove();
+    };
+
+    static init = this.loadEnd();
+    static resize = window.addEventListener('resize', this.setLayout);
+    static select =  this.selector(document.getElementById('pagego'), document.getElementById('pageback'));
 };
 
-/** Opens id "info".*/
-function onInfo() {
-    info.classList='info i-on fx';
-    on.style='display:none;';
-    off.style='display:block;';
-};
-/** Closes id "info".*/
-function offInfo() {
-    info.classList='info i-off fx';
-    off.style='display:none;';
-    on.style='display:block;';   
-};
-
-off.style='display:none;';
-on.addEventListener('click',()=> {
-    onInfo();
-});
-off.addEventListener('click',()=> {
-    offInfo();
-});
-
-playTag();
+main.init;
+main.resize;
+main.select;
