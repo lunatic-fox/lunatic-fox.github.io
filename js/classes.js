@@ -5,7 +5,7 @@ class data {
     static async size() {
         let n = 0;
         for (let i = 1; i < 50; i++) {
-            if ((await fetch(`http://joseliojunior.github.io/data/post/p${i}.json`)).ok) n++;
+            if ((await fetch(`https://joseliojunior.github.io/data/post/p${i}.json`)).ok) n++;
             else break;
         };
         return n;

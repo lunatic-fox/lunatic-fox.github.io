@@ -33,7 +33,7 @@ class main {
     };
 
     static async getData(page) {
-        const url = `http://joseliojunior.github.io/data/post/p${page ??= 1}.json`;
+        const url = `https://joseliojunior.github.io/data/post/p${page ??= 1}.json`;
         const data = await fetch(url);
     
         if (data.status == 404)
