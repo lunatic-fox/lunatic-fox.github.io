@@ -124,7 +124,7 @@ header.flex {
 main {
     margin: 2%;
     width: 100%;
-    flex: 1vh;
+    flex: 1vmin;
 }
 section[name="post-orientation"] {
     margin: 0 2%;
