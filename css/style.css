@@ -111,7 +111,7 @@ header.flex {
     background: var(--options-bar-bg);
     width: 100%;
 }
-#options-bar a{
+#options-bar a {
     margin-left: 10%;
     font-family: monospace;
     font-size: 120%;
@@ -124,7 +124,7 @@ header.flex {
 main {
     margin: 2%;
     width: 100%;
-    flex: 1vmin;
+    flex: 1vh;
 }
 section[name="post-orientation"] {
     margin: 0 2%;
