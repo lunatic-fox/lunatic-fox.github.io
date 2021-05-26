@@ -174,11 +174,6 @@ article {
 
 
 /* footer */
-#f-wrapper {
-    flex: 1;
-    width: 100%;
-    align-items: flex-end;
-}
 footer {
     width: 100%;
     padding: 5px 0;
@@ -191,9 +186,5 @@ footer span {
     font-size: 120%;
     margin-right: 10px;
     font-family: monospace;
-}
-#gap { 
-    flex: 1;
-    width: 100%;
 }
 /* footer */
