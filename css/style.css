@@ -71,7 +71,7 @@ header.flex {
     height: 10px;
 }
 #load{
-    background: conic-gradient(#00000000 100deg , var(--star-btn-stroke));
+    background: conic-gradient(transparent 100deg , var(--star-btn-stroke));
     border-radius: 100%;
     width: 100px;
     height: 100px;
@@ -186,6 +186,8 @@ footer span {
 /* footer */
 
 
+
+/* wrappers */
 #h-wrapper {
     width: 100%;
     min-height: fit-content;
@@ -199,3 +201,4 @@ footer span {
     width: 100%;
     min-height: fit-content;
 }
+/* wrappers */
