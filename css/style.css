@@ -124,7 +124,6 @@ header.flex {
 main {
     margin: 2%;
     width: 100%;
-    flex: 2;
 }
 section[name="post-orientation"] {
     margin: 0 2%;
@@ -187,5 +186,10 @@ footer span {
     font-size: 120%;
     margin-right: 10px;
     font-family: monospace;
+}
+#gap {
+    width: 100%;
+    flex: 1;
+    background-color: yellowgreen;
 }
 /* footer */
