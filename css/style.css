@@ -187,7 +187,5 @@ footer span {
     margin-right: 10px;
     font-family: monospace;
 }
-#gap {
-    flex: 1;
-}
+#gap { flex: 1; }
 /* footer */
