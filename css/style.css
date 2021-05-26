@@ -103,9 +103,6 @@ header.flex {
     stroke: var(--star-btn-stroke);
 }
 #options-bar{
-    position: sticky;
-    top:0;
-    left: 0;
     border-radius: 0 0 100% 100%;
     color: var(--options-bar-color);
     background: var(--options-bar-bg);
@@ -122,7 +119,6 @@ header.flex {
 
 /* main content */
 main {
-    margin: 2%;
     width: 100%;
 }
 section[name="post-orientation"] {
@@ -188,3 +184,19 @@ footer span {
     font-family: monospace;
 }
 /* footer */
+
+
+#h-wrapper {
+    justify-content: start;
+    width: 100%;
+    min-height: 10%;
+}
+#m-wrapper {
+    width: 100%;
+    min-height: 85%;
+}
+#f-wrapper {
+    align-items: flex-end;
+    width: 100%;
+    min-height: 5%;
+}
