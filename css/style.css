@@ -191,6 +191,7 @@ footer span {
 #h-wrapper {
     width: 100%;
     min-height: fit-content;
+    color: #ffffff11;
 }
 #m-wrapper {
     flex: 1;

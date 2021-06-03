@@ -1,4 +1,9 @@
-export const lang = [
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
+`use strict`
+export const l = [
 	["abap","ABAP","#E8274B"],
 	["actionscript","ActionScript","#882B0F"],
 	["ada","Ada","#02f88c"],
@@ -88,7 +93,7 @@ export const lang = [
 	["jsoniq","JSONiq","#40d47e"],
 	["julia","Julia","#a270ba"],
 	["jupyter-notebook","Jupyter Notebook","#DA5B0B"],
-	["kotlin","Kotlin","#F18E33"],
+	["kotlin","Kotlin","#A97BFF"],
 	["krl","KRL","#28431f"],
 	["lasso","Lasso","#999999"],
 	["latte","Latte","#A8FF97"],

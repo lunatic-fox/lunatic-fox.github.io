@@ -3,7 +3,7 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {data, layout, post} from './objects.js';
+import {data, Layout, Post} from './Classes.js';
 
 const ids = {
     CONTENT: 'content',
@@ -21,17 +21,14 @@ const pagesDef = {
     length: await data.size()
 };
 
-const main = {
-    init() {
-        this.loadEnd();
-        window.addEventListener('resize', this.setLayout);
-        this.selector(ids.arrowGo, ids.arrowBack);
-    },
-    setLayout() {
-        layout.windowContext(ids.cardBoxes);
-        layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
-    },
-    pageSelector(element, direction) {
+class main {
+
+    static setLayout() {
+        Layout.windowContext(ids.cardBoxes);
+        Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
+    };
+
+    static pageSelector(element, direction) {
         element.addEventListener('click', async ()=> {
             if (direction && pagesDef.index < pagesDef.length)
             pagesDef.index++;
@@ -41,28 +38,42 @@ const main = {
 
             await this.getData(pagesDef.index);
             ids.numberText.innerHTML = pagesDef.index;
-            layout.windowContext(ids.cardBoxes);
+            Layout.windowContext(ids.cardBoxes);
         });
-    },
-    selector(goAhead, goBack) {
+    };
+
+    static selector(goAhead, goBack) {
         this.pageSelector(goAhead, true);
         this.pageSelector(goBack, false);
-    },
-    async getData(page) {
+    };
+
+    static async getData(page) {
         const url = `${data.URL}${page ??= 1}.json`;
         const capturedData = await fetch(url);
 
         const response = await capturedData.json();
-        return post.buildContent(ids.CONTENT, response);
-    },
-    async setData() {
+        
+        document.getElementById(ids.CONTENT).innerHTML = Post.go(response);
+    };
+
+    static async setData() {
         await this.getData();
-        this.setLayout(); 
-    },
-    async loadEnd() {
-        await this.setData();
-        return ids.loading.remove();
-    }
+        this.setLayout();
+    };
+
+    static async loadEnd() {
+        this.setData();
+        
+        setTimeout(() => {
+            ids.loading.remove();
+        }, 100);  
+    };
+
+    static get init() {
+        this.loadEnd();
+        window.addEventListener('resize', this.setLayout);
+        this.selector(ids.arrowGo, ids.arrowBack);
+    };
 };
 
-main.init();
+main.init;
