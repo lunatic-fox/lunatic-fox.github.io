@@ -3,7 +3,7 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {data, Layout, Post} from './Classes.js';
+import {data, Layout, Post} from './classes.js';
 
 const ids = {
     CONTENT: 'content',
