@@ -104,24 +104,25 @@ export class Post extends Color {
         let arr = [];
 
         for (let i = 0; i < ghcls.length; i++) {
-            if (plang == ghcls[i][0]) {
+            if (plang?.toLowerCase() == ghcls[i][0]) {
                 arr.push(ghcls[i][1], ghcls[i][2]);
             };
         };
 
         if (plang != null) {
-            arr.push(plang, '#dddddd');
+            arr.push(plang, '#DDDDDD');
         };
 
         return `<div style="margin: 0 4px;">
             <div style="display: inline-block; width: 12px; height: 12px;
-            border: solid 1px ${this.pcls(arr[1], 'hex', 'hsl', 0, 0, 0.1)}; border-radius: 100%; background:${arr[1] ??= ''};"></div> ${arr[0] ??= ''}
+            border: solid 1px ${this.pcls(arr[1], 'hex', 'hsl', 0, 0, 0.1)};
+            border-radius: 100%; background:${arr[1] ??= ''};"></div> ${arr[0] ??= ''}
         </div>`;
     };
 
 
     static tag(tags) {
-        const tagArr = tags.toLowerCase().replace(/\s/g, '').split(',');
+        const tagArr = tags.replace(/\s/g, '').split(',');
         const style = `align-itens: center; justify-content:center; margin: 10px; font-size: 80%; color:var(--tag-description-color);`;
         
         if (tagArr.length > 3)
