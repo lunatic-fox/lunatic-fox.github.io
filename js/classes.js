@@ -3,8 +3,9 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {l} from './lcls.json.js';
 import {Color} from './cls.js';
+const ghcls = await Color.ghc();
+
 
 const CONSOLE_INFO = `color: #0d9c00;background: #0d9c0021;border-radius: 2px;font-size: 15px;font-weight: bold;`;
 
@@ -99,13 +100,17 @@ export class Post extends Color {
 
 
     static langSelect(plang) {
+
         let arr = [];
 
-        for (let i = 0; i < l.length; i++) {
-            if (plang == l[i][0]) {
-                arr.push(l[i][1]);
-                arr.push(l[i][2]);
+        for (let i = 0; i < ghcls.length; i++) {
+            if (plang == ghcls[i][0]) {
+                arr.push(ghcls[i][1], ghcls[i][2]);
             };
+        };
+
+        if (plang != null) {
+            arr.push(plang, '#dddddd');
         };
 
         return `<div style="margin: 0 4px;">

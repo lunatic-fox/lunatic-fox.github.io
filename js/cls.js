@@ -2,6 +2,32 @@ import {ccls} from './ccls.js';
 
 export class Color {
 
+    static async ghc() {
+        const data = await fetch(`https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml`);
+
+        const response = await data.text();
+    
+        const tRes = `"${response
+            .replace(/^(\#.*|---)/gim, '')
+            .replace(/^\s{2}(?!color).*/gim, '')
+            .replace(/color:/gim, '')
+            .replace(/:\s+"#/gim, '","#')
+            .replace(/.*:/gim, '')
+            .replace(/\"\s+/gim, '","')
+            .replace(/","$/, '')}"
+            `.split(',')
+             .map(x => x.replace(/\n|"/g, ''));
+    
+        let arr = [];
+    
+        for (let i = 0; i < tRes.length; i++) {
+            arr.push([tRes[i].toLowerCase() ,tRes[i], tRes[i+1]]);
+            i++;
+        };
+    
+        return arr;
+    };
+
     static pcls(cls, f, t, a, s, l) {
     
         if (cls == null)
