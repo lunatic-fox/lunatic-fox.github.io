@@ -317,7 +317,7 @@ export class xcls {
 
         for (let i = 0; i < ccls.length; i++) {
 
-            if (o == 'rgba' && cc == ccls[i][0])
+            if (o == 'rgb' && cc == ccls[i][0])
             return this.ph(ccls[i][1], 'rgba');
 
             if (o == 'hsl' && cc == ccls[i][0])
