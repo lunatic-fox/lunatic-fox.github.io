@@ -75,6 +75,7 @@ class main {
             nnd.style.flexGrow = '1';
             nnd.style.fontSize = '20px';
             nnd.style.color = txcls(arr[i][1]);
+            node.style.cursor = 'pointer';
             document.getElementById('color-content').appendChild(nnd);
     
     
