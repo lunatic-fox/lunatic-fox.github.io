@@ -1,13 +1,16 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
 import {ccls} from './ccls.js';
-
-export class Color {
+export class xcls {
 
     static async ghc() {
         const data = await fetch(`https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml`);
 
-        const response = await data.text();
+        const res = await data.text();
     
-        const tRes = `"${response
+        const tRes = `"${res
             .replace(/^(\#.*|---)/gim, '')
             .replace(/^\s{2}(?!color).*/gim, '')
             .replace(/color:/gim, '')
@@ -332,7 +335,7 @@ export class Color {
     static pck(p, t) {
 
         if (typeof p !== 'string')
-        throw new Error(`\n\nThe parameter color must be a string type!\n`);
+        throw new Error(`\n\n?\n`);
         
         const cws = p.replace(/\s/g, '');
 
@@ -369,55 +372,20 @@ export class Color {
 
     static err(cls, pt) {
 
-        const derr = new Error(`\n\nInvalid call!\n`);
+        const derr = new Error(`\n\n?\n`);
 
         if (arguments.length < 2)
         throw derr;
         
-        const tm = pt == 'hex' ? 
-        
-        '\n\nExpected patterns with or without "#":' +
-        '\n > #fff' + 
-        '\n > #ffff' + 
-        '\n > #ffffff' + 
-        '\n > #ffffffff\n'
-
-        : pt == 'rgba' ? 
-
-        '\n\nExpected patterns:' +
-        '\n > 0 , 0 , 0 ' +
-        '\n > 0 , 0 , 0 , 0 ' +
-        '\n > ( 0 , 0 , 0 )' +
-        '\n > ( 0 , 0 , 0 , 0 )' +
-        '\n > rgb( 0 , 0 , 0 )' +
-        '\n > rgba( 0 , 0 , 0 , 0 )\n'
-
-        : pt == 'hsla' ?
-
-        '\n\nExpected patterns with or without "%":' +
-        '\n > 0 , 0 , 0 ' +
-        '\n > 0 , 0 , 0 , 0 ' +
-        '\n > ( 0 , 0 , 0 )' +
-        '\n > ( 0 , 0 , 0 , 0 )' +
-        '\n > hsl( 0 , 0 , 0 )' +
-        '\n > hsla( 0 , 0 , 0 , 0 )\n'
-
-        : pt == 'css' ? 
-
-        '\n\nExpected patterns:' +
-        '\n > One of the 140 CSS avaiable colors.\n Reference: https://www.w3schools.com/cssref/css_colors.asp\n'
-
-        : null;
+        const tm = '?';
 
         if (cls == null && pt === 'flag')
-        throw new Error('\n\nInvalid output!\n');
+        throw new Error(`\n?\n`);
 
         if (tm == null)
         throw derr;
 
-        return new Error(`\nInvalid pattern: ${cls}\n` +
-            ' '.repeat(17) + '^'.repeat(cls.length) +
-            tm);
+        return new Error(`\n?\n`);
 
     };
 

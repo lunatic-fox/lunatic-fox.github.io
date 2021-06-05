@@ -3,76 +3,76 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {data, Layout, Post} from './classes.js';
+import {dt, ly, pst} from './clss.js';
 
 const ids = {
-    CONTENT: 'content',
-    loading: document.getElementById('loading-screen'),
-    arrowGo: document.getElementById('arrow-go'),
-    arrowBack: document.getElementById('arrow-back'),
-    starThemeBtn: document.getElementById('star-theme-btn'),
-    themeLinkElement: document.getElementById('theme'),
-    cardBoxes: document.getElementsByName('post-orientation'),
-    numberText: document.getElementById('page-number'),
+    ctnt: 'content',
+    ld: document.getElementById('loading-screen'),
+    awg: document.getElementById('arrow-go'),
+    awb: document.getElementById('arrow-back'),
+    stb: document.getElementById('star-theme-btn'),
+    tlke: document.getElementById('theme'),
+    cbx: document.getElementsByName('post-orientation'),
+    ntx: document.getElementById('page-number'),
 };
 
 const pagesDef = {
-    index: 1,
-    length: await data.size()
+    ix: 1,
+    lgt: await dt.sz()
 };
 
 class main {
 
-    static setLayout() {
-        Layout.windowContext(ids.cardBoxes);
-        Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
+    static slyt() {
+        ly.wctx(ids.cbx);
+        ly.thpk(ids.stb, ids.tlke);
     };
 
-    static pageSelector(element, direction) {
+    static pgs(element, direction) {
         element.addEventListener('click', async ()=> {
-            if (direction && pagesDef.index < pagesDef.length)
-            pagesDef.index++;
+            if (direction && pagesDef.ix < pagesDef.lgt)
+            pagesDef.ix++;
 
-            if (!direction && pagesDef.index > 1)
-            pagesDef.index--;
+            if (!direction && pagesDef.ix > 1)
+            pagesDef.ix--;
 
-            await this.getData(pagesDef.index);
-            ids.numberText.innerHTML = pagesDef.index;
-            Layout.windowContext(ids.cardBoxes);
+            await this.gdt(pagesDef.ix);
+            ids.ntx.innerHTML = pagesDef.ix;
+            ly.wctx(ids.cbx);
         });
     };
 
-    static selector(goAhead, goBack) {
-        this.pageSelector(goAhead, true);
-        this.pageSelector(goBack, false);
+    static slct(goAhead, goBack) {
+        this.pgs(goAhead, true);
+        this.pgs(goBack, false);
     };
 
-    static async getData(page) {
-        const url = `${data.URL}${page ??= 1}.json`;
-        const capturedData = await fetch(url);
+    static async gdt(page) {
+        const url = `${dt.URL}${page ??= 1}.json`;
+        const cptdt = await fetch(url);
 
-        const response = await capturedData.json();
+        const res = await cptdt.json();
         
-        document.getElementById(ids.CONTENT).innerHTML = Post.go(response);
+        document.getElementById(ids.ctnt).innerHTML = pst.go(res);
     };
 
-    static async setData() {
-        await this.getData();
-        this.setLayout();
+    static async sdt() {
+        await this.gdt();
+        this.slyt();
     };
 
-    static async loadEnd() {
-        this.setData();
+    static async lnd() {
+        this.sdt();
         
         setTimeout(() => {
-            ids.loading.remove();
+            ids.ld.remove();
         }, 100);  
     };
 
     static get init() {
-        this.loadEnd();
-        window.addEventListener('resize', this.setLayout);
-        this.selector(ids.arrowGo, ids.arrowBack);
+        this.lnd();
+        window.addEventListener('resize', this.slyt);
+        this.slct(ids.awg, ids.awb);
     };
 };
 

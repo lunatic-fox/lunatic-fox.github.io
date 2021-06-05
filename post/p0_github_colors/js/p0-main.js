@@ -3,34 +3,34 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {Layout} from '../../../js/classes.js';
-import {Color} from '../../../js/cls.js';
+import {ly} from '../../../js/clss.js';
+import {xcls} from '../../../js/cls.js';
  
 const ids = {
-     CONTENT: 'content',
-     loading: document.getElementById('loading-screen'),
-     arrowGo: document.getElementById('arrow-go'),
-     arrowBack: document.getElementById('arrow-back'),
-     starThemeBtn: document.getElementById('star-theme-btn'),
-     themeLinkElement: document.getElementById('theme'),
-     cardBoxes: document.getElementsByName('post-orientation'),
-     numberText: document.getElementById('page-number'),
+     ctnt: 'content',
+     ld: document.getElementById('loading-screen'),
+     awg: document.getElementById('arrow-go'),
+     awb: document.getElementById('arrow-back'),
+     stb: document.getElementById('star-theme-btn'),
+     tlke: document.getElementById('theme'),
+     cbx: document.getElementsByName('post-orientation'),
+     ntx: document.getElementById('page-number'),
  };
  
 class main {
  
-    static setLayout() {
-         Layout.windowContext(ids.cardBoxes);
-         Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
+    static slyt() {
+         ly.wctx(ids.cbx);
+         ly.thpk(ids.stb, ids.tlke);
      };
  
-    static async getData() {
+    static async pgs() {
 
-        const data = await fetch(`https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml`);
+        const dtt = await fetch(`https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml`);
 
-        const response = await data.text();
+        const res = await dtt.text();
     
-        const tRes = `"${response
+        const tRes = `"${res
             .replace(/^(\#.*|---)/gim, '')
             .replace(/^\s{2}(?!color).*/gim, '')
             .replace(/color:/gim, '')
@@ -48,7 +48,7 @@ class main {
             i++;
         };
     
-        const textColor = (x)=> {
+        const txcls = (x)=> {
             x = x.replace('#', '');
             const r = parseInt(`${x[0]}${x[1]}`, 16);
             const g = parseInt(`${x[2]}${x[3]}`, 16);
@@ -56,33 +56,33 @@ class main {
             const th = 170;
     
             return r > th || g > th || b > th ? 
-            Color.pcls(x, 'hex', 'rgb', null, -0.2, -0.45)
-            : Color.pcls(x, 'hex', 'rgb', null, null, 0.4);
+            xcls.pcls(x, 'hex', 'rgb', null, -0.2, -0.45)
+            : xcls.pcls(x, 'hex', 'rgb', null, null, 0.4);
         };
 
        
     
         for (let i = 0; i < arr.length; i++) {
-            const node = document.createElement('span');
+            const nnd = document.createElement('span');
     
-            node.innerHTML = `${arr[i][0]}<br>`
-            node.id = `pc${i}`;
-            node.style.background = arr[i][1];
-            node.style.padding = '5px 8px';
-            node.style.borderRadius = '4px';
-            node.style.border = `solid 1px ${Color.pcls(arr[i][1], 'hex', 'rgb', null, null, 0.2)}`;
-            node.style.margin = '2px';
-            node.style.flexGrow = '1';
-            node.style.fontSize = '20px';
-            node.style.color = textColor(arr[i][1]);
-            document.getElementById('color-content').appendChild(node);
+            nnd.innerHTML = `${arr[i][0]}<br>`
+            nnd.id = `pc${i}`;
+            nnd.style.background = arr[i][1];
+            nnd.style.padding = '5px 8px';
+            nnd.style.borderRadius = '4px';
+            nnd.style.border = `solid 1px ${xcls.pcls(arr[i][1], 'hex', 'rgb', null, null, 0.2)}`;
+            nnd.style.margin = '2px';
+            nnd.style.flexGrow = '1';
+            nnd.style.fontSize = '20px';
+            nnd.style.color = txcls(arr[i][1]);
+            document.getElementById('color-content').appendChild(nnd);
     
     
-            const hexColor = document.createElement('span');
-            hexColor.id = `hex${i}`;
-            hexColor.style.fontSize = '14px';
+            const hxcls = document.createElement('span');
+            hxcls.id = `hex${i}`;
+            hxcls.style.fontSize = '14px';
     
-            node.appendChild(hexColor);
+            nnd.appendChild(hxcls);
 
             const pcolor = document.getElementById(`pc${i}`);
             const hex = document.getElementById(`hex${i}`);
@@ -94,8 +94,8 @@ class main {
                 if (status) {
                     pcolor.style.flexBasis = '100%';
                     hex.innerHTML = `${arr[i][1]}`.toUpperCase() +
-                    `<br>${Color.ph(arr[i][1], 'rgba')}`.replace(/,/g, ', ') +
-                    `<br>${Color.ph(arr[i][1], 'hsla')}`.replace(/,/g, ', ');
+                    `<br>${xcls.ph(arr[i][1], 'rgba')}`.replace(/,/g, ', ') +
+                    `<br>${xcls.ph(arr[i][1], 'hsla')}`.replace(/,/g, ', ');
                     status = false;
                 } else {
                     pcolor.style.flexBasis = 'auto';
@@ -110,22 +110,22 @@ class main {
         
      };
  
-    static async setData() {
-         await this.getData();
-         this.setLayout();
+    static async sdt() {
+         await this.pgs();
+         this.slyt();
      };
  
-    static async loadEnd() {
-         this.setData();
+    static async lnd() {
+         this.sdt();
          
          setTimeout(() => {
-             ids.loading.remove();
+             ids.ld.remove();
          }, 500);  
      };
  
     static get init() {
-         this.loadEnd();
-         window.addEventListener('resize', this.setLayout);
+         this.lnd();
+         window.addEventListener('resize', this.slyt);
      };
  };
  
