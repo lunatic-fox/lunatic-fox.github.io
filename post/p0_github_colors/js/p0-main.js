@@ -11,13 +11,11 @@ const ids = {
     loading: document.getElementById('loading-screen'),
     starThemeBtn: document.getElementById('star-theme-btn'),
     themeLinkElement: document.getElementById('theme')
-//   cardBoxes: document.getElementsByName('post-orientation')
 };
 
 class main {
 
     static setLayout() {
-    //   Layout.windowContext(ids.cardBoxes);
         Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
     };
 
@@ -85,6 +83,7 @@ class main {
             });
             
         };
+        
         document.getElementById('lang-number').innerHTML = `Languages total number: ${arr.length}`;
         
     };
