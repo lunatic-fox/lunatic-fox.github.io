@@ -12,7 +12,6 @@ const ids = {
     arrowBack: document.getElementById('arrow-back'),
     starThemeBtn: document.getElementById('star-theme-btn'),
     themeLinkElement: document.getElementById('theme'),
-    // cardBoxes: document.getElementsByName('post-orientation'),
     numberText: document.getElementById('page-number')
 };
 
@@ -24,7 +23,6 @@ const pagesDef = {
 class main {
 
     static setLayout() {
-        // Layout.windowContext(ids.cardBoxes);
         Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
     };
 
@@ -38,7 +36,6 @@ class main {
 
             await this.getData(pagesDef.index);
             ids.numberText.innerHTML = pagesDef.index;
-            // Layout.windowContext(ids.cardBoxes);
         });
     };
 
@@ -48,16 +45,13 @@ class main {
     };
 
     static async getData(page) {
-        // const url = `https://joseliojunior.github.io/data/post/cards.json`;
 
-
-        const url = `${data.URL}${page ??= 1}.json`;
-        
+        const url = `${data.URL}${page ?? 1}.json`;
 
         const capturedData = await fetch(url);
 
         const response = await capturedData.json();
-        Post.makeCard(response, 'content');
+        Post.makeCard(response, ids.CONTENT);
     };
 
     static async setData() {

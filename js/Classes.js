@@ -17,9 +17,13 @@ export const data = {
     async size() {
         let n = 0;
         for (let i = 1; i < 100; i++) {
-            if ((await fetch(`${this.URL}${i}.json`)).ok) n++;
-            console.info(`%c Total pages counted: ${n} `, C_INFO);
-            break;
+            if ((await fetch(`${this.URL}${i}.json`)).ok) {
+                n++;
+            } else {
+                console.clear();
+                console.info(`%c Total pages counted: ${n} `, C_INFO);
+                break;
+            };
         };
         return n;
     }
