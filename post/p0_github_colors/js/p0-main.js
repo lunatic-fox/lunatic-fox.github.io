@@ -3,52 +3,33 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {ly} from '../../../js/clss.js';
-import {xcls} from '../../../js/cls.js';
- 
+import {githubColors, Layout} from '../../../js/Classes.js';
+import {Color} from '../../../js/Color.js';
+
 const ids = {
-     ctnt: 'content',
-     ld: document.getElementById('loading-screen'),
-     awg: document.getElementById('arrow-go'),
-     awb: document.getElementById('arrow-back'),
-     stb: document.getElementById('star-theme-btn'),
-     tlke: document.getElementById('theme'),
-     cbx: document.getElementsByName('post-orientation'),
-     ntx: document.getElementById('page-number'),
- };
- 
+    CONTENT: 'content',
+    loading: document.getElementById('loading-screen'),
+    starThemeBtn: document.getElementById('star-theme-btn'),
+    themeLinkElement: document.getElementById('theme')
+//   cardBoxes: document.getElementsByName('post-orientation')
+};
+
 class main {
- 
-    static slyt() {
-         ly.wctx(ids.cbx);
-         ly.thpk(ids.stb, ids.tlke);
-     };
- 
-    static async pgs() {
 
-        const dtt = await fetch(`https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml`);
+    static setLayout() {
+    //   Layout.windowContext(ids.cardBoxes);
+        Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
+    };
 
-        const res = await dtt.text();
-    
-        const tRes = `"${res
-            .replace(/^(\#.*|---)/gim, '')
-            .replace(/^\s{2}(?!color).*/gim, '')
-            .replace(/color:/gim, '')
-            .replace(/:\s+"#/gim, '","#')
-            .replace(/.*:/gim, '')
-            .replace(/\"\s+/gim, '","')
-            .replace(/","$/, '')}"
-            `.split(',')
-             .map(x => x.replace(/\n|"/g, ''));
+    static async getData() {
     
         let arr = [];
     
-        for (let i = 0; i < tRes.length; i++) {
-            arr.push([tRes[i], tRes[i+1]]);
-            i++;
-        };
+        for (let i = 0; i < githubColors.length; i++) {
+            arr.push([githubColors[i][1], githubColors[i][2]]);
+        };         
     
-        const txcls = (x)=> {
+        const textColor = (x)=> {
             x = x.replace('#', '');
             const r = parseInt(`${x[0]}${x[1]}`, 16);
             const g = parseInt(`${x[2]}${x[3]}`, 16);
@@ -56,34 +37,32 @@ class main {
             const th = 170;
     
             return r > th || g > th || b > th ? 
-            xcls.pcls(x, 'hex', 'rgb', null, -0.2, -0.45)
-            : xcls.pcls(x, 'hex', 'rgb', null, null, 0.4);
+            Color.parseColor(x, 'hex', 'rgb', null, -0.2, -0.45)
+            : Color.parseColor(x, 'hex', 'rgb', null, null, 0.4);
         };
-
-       
     
         for (let i = 0; i < arr.length; i++) {
-            const nnd = document.createElement('span');
+            const node = document.createElement('span');
     
-            nnd.innerHTML = `${arr[i][0]}<br>`
-            nnd.id = `pc${i}`;
-            nnd.style.background = arr[i][1];
-            nnd.style.padding = '5px 8px';
-            nnd.style.borderRadius = '4px';
-            nnd.style.border = `solid 1px ${xcls.pcls(arr[i][1], 'hex', 'rgb', null, null, 0.2)}`;
-            nnd.style.margin = '2px';
-            nnd.style.flexGrow = '1';
-            nnd.style.fontSize = '20px';
-            nnd.style.color = txcls(arr[i][1]);
-            nnd.style.cursor = 'pointer';
-            document.getElementById('color-content').appendChild(nnd);
+            node.innerHTML = `${arr[i][0]}<br>`
+            node.id = `pc${i}`;
+            node.style.background = arr[i][1];
+            node.style.padding = '5px 8px';
+            node.style.borderRadius = '4px';
+            node.style.border = `solid 1px ${Color.parseColor(arr[i][1], 'hex', 'rgb', null, null, 0.2)}`;
+            node.style.margin = '2px';
+            node.style.flexGrow = '1';
+            node.style.fontSize = '20px';
+            node.style.color = textColor(arr[i][1]);
+            node.style.cursor = 'pointer';
+            document.getElementById(ids.CONTENT).appendChild(node);
     
     
-            const hxcls = document.createElement('span');
-            hxcls.id = `hex${i}`;
-            hxcls.style.fontSize = '14px';
+            const hexColor = document.createElement('span');
+            hexColor.id = `hex${i}`;
+            hexColor.style.fontSize = '14px';
     
-            nnd.appendChild(hxcls);
+            node.appendChild(hexColor);
 
             const pcolor = document.getElementById(`pc${i}`);
             const hex = document.getElementById(`hex${i}`);
@@ -95,8 +74,8 @@ class main {
                 if (status) {
                     pcolor.style.flexBasis = '100%';
                     hex.innerHTML = `${arr[i][1]}`.toUpperCase() +
-                    `<br>${xcls.ph(arr[i][1], 'rgba')}`.replace(/,/g, ', ') +
-                    `<br>${xcls.ph(arr[i][1], 'hsla')}`.replace(/,/g, ', ');
+                    `<br>${Color.parseHEX(arr[i][1], 'rgba')}`.replace(/,/g, ', ') +
+                    `<br>${Color.parseHEX(arr[i][1], 'hsla')}`.replace(/,/g, ', ');
                     status = false;
                 } else {
                     pcolor.style.flexBasis = 'auto';
@@ -106,28 +85,27 @@ class main {
             });
             
         };
-
         document.getElementById('lang-number').innerHTML = `Languages total number: ${arr.length}`;
         
-     };
- 
-    static async sdt() {
-         await this.pgs();
-         this.slyt();
-     };
- 
-    static async lnd() {
-         this.sdt();
-         
-         setTimeout(() => {
-             ids.ld.remove();
-         }, 500);  
-     };
- 
+    };
+
+    static async setData() {
+        await this.getData();
+        this.setLayout();
+    };
+
+    static async loadEnd() {
+        this.setData();
+        
+        setTimeout(() => {
+            ids.loading.remove();
+        }, 500);  
+    };
+
     static get init() {
-         this.lnd();
-         window.addEventListener('resize', this.slyt);
-     };
- };
- 
+        this.loadEnd();
+        window.addEventListener('resize', this.setLayout);
+    };
+};
+
 main.init;

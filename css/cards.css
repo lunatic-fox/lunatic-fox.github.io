@@ -1,0 +1,33 @@
+article {
+    margin: 5px;
+    padding: 10px;
+    max-width: 400px;
+    border: solid 3px var(--header-bg);
+    border-radius: 10px;
+}
+.c-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.c-description {
+    padding: 8px;
+}
+.c-tag-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.c-tag-box {
+    margin: 3px 8px;
+    font-size: 0.8rem;
+}
+.c-tag {
+    display: inline-block;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+
+}
