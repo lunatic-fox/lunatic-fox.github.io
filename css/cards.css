@@ -25,9 +25,7 @@ article {
 }
 .c-tag {
     display: inline-block;
-    margin-right: 4px;
     width: 12px;
     height: 12px;
     border-radius: 100%;
-
 }
