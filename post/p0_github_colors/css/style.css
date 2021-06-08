@@ -141,7 +141,7 @@ footer {
 #date {
     margin: 10px;
     max-width: 480px;
-    width: 100%;
+    width: 90%;
     font-size: 15px;
     font-family: monospace;
     font-weight: 700;
@@ -155,13 +155,12 @@ footer {
 #title {
     margin: 10px;
     max-width: 480px;
-    width: 100%;
+    width: 90%;
     font-size: 20px;
     font-weight: 700;
     text-align: center;
     padding: 5px 10px;
     border-radius: 0 50px 50px 0;
-    width: 90%;
     background: linear-gradient(45deg, transparent  10%, var(--header-bg));
 }
 
