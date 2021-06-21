@@ -305,23 +305,20 @@ export class GameTitleScreen extends Transition {
 
         this.tE.newGame().addEventListener('click', ()=> {
             this.fadeOut(this.tE.titleScreen());
-
-            if (screen.orientation.type == 'portrait-primary' || screen.orientation.type == 'portrait-secondary') {
-                screen.orientation.lock('portrait');
-            };
             Game.main;
-            
+            document.body.requestFullscreen();
         });
 
-        let langStatus = true;
+        let langStatus = navigator.language == 'pt' ? false : true;
         this.tE.options().addEventListener('click', ()=> {
+
             if (langStatus) {
-                this.gEn();
+                this.gPt();
                 langStatus = false;
             } else {
-                this.gPt();
-                langStatus = true;
-            };
+                this.gEn();
+                langStatus = true;              
+            }; 
         });
         ///
 
