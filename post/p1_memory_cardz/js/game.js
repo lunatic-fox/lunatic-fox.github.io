@@ -15,12 +15,15 @@ export class Game {
 
     static mainGame() {
 
-        for (let i = 0; i <= 1; i++) {
-            const cardBox = document.createElement('div');
-            cardBox.id = `cardbox${i}`;
-            cardBox.classList = 'cardbox';
-            this.properties.contentArea.appendChild(cardBox);
-        };
+        // for (let i = 0; i <= 1; i++) {
+        //     const cardBox = document.createElement('div');
+        //     cardBox.id = `cardbox${i}`;
+        //     cardBox.classList = 'cardbox';
+        //     this.properties.contentArea.appendChild(cardBox);
+        // };
+
+        this.properties.contentArea.innerHTML = `<div id="cardbox0" class="cardbox"></div>
+        <div id="cardbox1" class="cardbox"></div>`;
     
         const cardBoxA = document.getElementById('cardbox0');
         const cardBoxB = document.getElementById('cardbox1');
@@ -302,10 +305,7 @@ export class GameTitleScreen extends Transition {
 
         this.tE.newGame().addEventListener('click', ()=> {
             this.fadeOut(this.tE.titleScreen());
-            if (screen.orientation.type == 'portrait-primary' 
-            || screen.orientation.type == 'portrait-secondary') {
-                screen.orientation.lock('landscape-primary');
-            };
+
             Game.properties.contentArea.requestFullscreen();
             Game.main;
         });

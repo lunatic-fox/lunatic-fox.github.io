@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+@media only screen and (orientation:portrait) {
+    #game-logo span:first-child {
+        font-size: 8vw !important;
+    }
+    #game-logo span:nth-child(2) {
+        margin-top: -1.5vw !important;
+        font-size: 6.8vw !important;
+    }
+    #game-logo span:nth-child(2) span {
+        font-size: 4vw !important;
+    }
+    .t-btn {
+        font-size: 4vw !important;
+    }
+    #github-msg {
+        font-size: 3vw !important;
+    }
+}
 
 :root {
     --dark-text: #333;
