@@ -302,7 +302,10 @@ export class GameTitleScreen extends Transition {
 
         this.tE.newGame().addEventListener('click', ()=> {
             this.fadeOut(this.tE.titleScreen());
-            screen.orientation.lock('landscape');
+            if (screen.orientation.type == 'portrait-primary' 
+            || screen.orientation.type == 'portrait-secondary') {
+                screen.orientation.lock('landscape-primary');
+            };
             Game.properties.contentArea.requestFullscreen();
             Game.main;
         });

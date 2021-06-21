@@ -52,7 +52,7 @@
 #title-btn-box {
     /* background-color: darkgreen; */
     height: 100%;
-    width: 50%;
+    width: fit-content;
     /* background-color: crimson; */
 
 }
@@ -62,11 +62,12 @@
 .t-btn {
     width: 90%;
     margin: 2% 0;
-    padding: 5px 0;
+    padding: 5px 15%;
     border-radius: 5px;
     font-family: 'Orbitron', sans-serif;
     font-size: 4vh;
     font-weight: 600;
+    white-space: nowrap;
     box-shadow: inset 0 0 15px rgb(0, 0, 0);
     background: rgb(34, 34, 34);
     color: var(--light-text);
