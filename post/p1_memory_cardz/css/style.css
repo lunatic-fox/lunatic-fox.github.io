@@ -82,48 +82,37 @@ body::-webkit-scrollbar-thumb {
 
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
     background: var(--header-bg);
 }
-    #logo {
-        height: 35px;
-    }
-        #logo-wrapper {
-            background: var(--options-bar-bg);
-            padding: 10px 50px 10px 10px;
-            border-radius: 0 20px 100px 0;
-        }
-    #star-theme-btn {
-        height: 35px;
-        stroke: var(--star-btn-stroke);
-        cursor: pointer;
-    }
-        #star-theme-btn-wrapper {
-            background: var(--options-bar-bg);
-            padding: 10px 10px 10px 20px;
-            border-radius: 100px 0 0 20px;
-        }
-
-
-
-
-/* main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    flex-wrap: wrap;
-    flex-grow: 1;
-} */
-
+#logo {
+    height: 35px;
+}
+#logo-wrapper {
+    background: var(--options-bar-bg);
+    padding: 10px 50px 10px 10px;
+    border-radius: 0 20px 100px 0;
+}
+#star-theme-btn {
+    height: 35px;
+    stroke: var(--star-btn-stroke);
+    cursor: pointer;
+}
+#star-theme-btn-wrapper {
+    background: var(--options-bar-bg);
+    padding: 10px 10px 10px 20px;
+    border-radius: 100px 0 0 20px;
+}
 
 
 footer {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 5px;
+    padding: 5px 0;
     border-radius: 30% 30% 0 0;
     font-weight: 700;
     color: var(--options-bar-color);
@@ -138,6 +127,10 @@ footer {
     width: 100%;
     margin: -1px 0 10px 0;
     border-radius: 0 0 100% 100%;
+}
+
+#post-wrapper {
+    width: 100%;
 }
 
 #date {

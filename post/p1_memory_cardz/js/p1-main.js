@@ -4,7 +4,7 @@
  */
 `use strict`
 import { Layout } from '../../../js/Classes.js';
-import { Game, GameTitleScreen } from './game.js';
+import { Game } from './game.js';
 
 const ids = {
     content: document.getElementById('content'),
@@ -48,65 +48,14 @@ class main {
 main.init;
 
 
+import { InGame } from './inGame.js';
 
+//GameTimer.newTimer();
 
+// ids.content.style.display = 'flex';
+// Game.main;
 
+//Game.directInit();
 
-Game.titleScreen;
-//Game.main;
+Game.init();
 
-
-
-
-
-// const gameTranslation = {
-//     newGame: document.getElementById('new-game-btn'),
-//     language: document.getElementById('language-game-btn'),
-//     quit: document.getElementById('quit-game-btn'),
-//     starGithub: document.getElementById('github-msg')
-// };
-
-// function gEn() {
-//     gameTranslation.newGame.innerHTML = 'new game';
-//     gameTranslation.language.innerHTML = 'language';
-//     gameTranslation.quit.innerHTML = 'quit';
-//     gameTranslation.starGithub.innerHTML = 'Star me on Github';
-// };
-
-// function gPt() {
-//     gameTranslation.newGame.innerHTML = 'novo jogo';
-//     gameTranslation.language.innerHTML = 'idioma';
-//     gameTranslation.quit.innerHTML = 'sair';
-//     gameTranslation.starGithub.innerHTML = 'Favorite-me no Github';
-// };
-
-
-// function gameLanguage(lang) {
-//     if (lang == 'pt') gPt();
-//     if (lang == 'en') gEn();
-// };
-
-
-// if (navigator.language == 'pt') {
-//     gPt();
-// } else {
-//     gEn();
-// };
-
-
-
-
-
-// let swstatus = true;
-
-// document.getElementById('language-game-btn').addEventListener('click', ()=> {
-
-//     if (swstatus) {
-//         gameLanguage('en');
-//         swstatus = false;
-//     } else {
-//         gameLanguage('pt');
-//         swstatus = true;
-//     };
-
-// });
