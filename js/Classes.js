@@ -12,23 +12,6 @@ const C_INFO = `
     font-size: 15px; 
     font-weight: bold;`;
 
-export const data = {
-    URL: 'https://joseliojunior.github.io/data/post/cards',
-    async size() {
-        let n = 0;
-        for (let i = 1; i < 100; i++) {
-            if ((await fetch(`${this.URL}${i}.json`)).ok) {
-                n++;
-            } else {
-                console.clear();
-                console.info(`%c Total pages counted: ${n} `, C_INFO);
-                break;
-            };
-        };
-        return n;
-    }
-};
-
 export class Layout {
 
     static themePicker(input, output) {

@@ -1,3 +1,8 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
+`use strict`
 const jsDoc_flags = 'hex'||'rgba'||'hsla'||'css';
 const jsDoc_parseColorFrom = 'hex'||'rgb'||'hsl'||'css';
 const jsDoc_parseColorTo = 'hex'||'rgb'||'hsl';

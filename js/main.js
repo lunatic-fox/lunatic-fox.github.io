@@ -3,7 +3,8 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {data, Layout, Post} from './Classes.js';
+import cards1 from '../data/post/cards1.js';
+import { Layout, Post } from './Classes.js';
 
 const ids = {
     CONTENT: 'content',
@@ -17,7 +18,7 @@ const ids = {
 
 const pagesDef = {
     index: 1,
-    length: await data.size()
+    length: 1
 };
 
 class main {
@@ -44,13 +45,8 @@ class main {
         this.pageSelector(goBack, false);
     };
 
-    static async getData(page) {
-
-        const url = `${data.URL}${page ?? 1}.json`;
-
-        const capturedData = await fetch(url);
-
-        const response = await capturedData.json();
+    static async getData() {
+        const response = cards1;
         Post.makeCard(response, ids.CONTENT);
     };
 
