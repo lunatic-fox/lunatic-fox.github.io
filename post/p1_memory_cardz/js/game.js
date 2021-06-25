@@ -1,13 +1,19 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
+`use strict`
 import { GameEndScreen } from "./gameEndScreen.js";
 import { GameTitleScreen } from "./gameTitleScreen.js";
 import { InGame } from "./inGame.js";
+import { GameTranslation } from "./gameTranslation.js";
 
 export class Game {
 
     static properties = {
-        initBtn: document.getElementById('open-game-btn'),
-        contentArea: document.getElementById('content'),
-        version: 'alpha version',
+        gamePageDescription: document.getElementById('game-page-description'),
+        content: document.getElementById('content'),
+        get initBtn() { return document.getElementById('open-game-btn') },
         deck: 0,
         deckSize: 10,
         arr: [],
@@ -15,13 +21,10 @@ export class Game {
         matches: 0
     };
 
-    static directInit() {
-        //document.body.requestFullscreen();
-        this.properties.contentArea.style.display = 'flex';
-        GameTitleScreen.create();
-    };
-
     static init() {
+
+        this.properties.gamePageDescription.innerHTML = GameTranslation.language().gamePageDescription;
+
         this.properties.initBtn.addEventListener('click', ()=> {
 
             const styleNode = document.createElement('style');
@@ -40,43 +43,37 @@ export class Game {
 
             document.body.appendChild(styleNode);
             document.body.requestFullscreen();
-            this.properties.contentArea.style.display = 'flex';
+            this.properties.content.style.display = 'flex';
             GameTitleScreen.create();
-
         });
     };
 
     static newGame() {
 
-        this.properties.contentArea.innerHTML = `
+        const w = GameTranslation.language();
+
+        this.properties.content.innerHTML = `
         <div id="current-game">
             <div id="game-timer" class="flex">
-
                 <div id="pause-game-btn" class="p-btn flex">
-                    pause
+                    ${w.pause}
                 </div>
-
                 <span>
-                    <span>score</span>:
+                    <span>${w.score}</span>:
                     <span id="current-score">0</span>
                 </span>
-        
                 <div>
                     <span id="game-timer-min">00</span>:<span id="game-timer-sec">00</span>
-                </div>
-                    
+                </div>  
             </div>
-
             <div id="cardbox0" class="cardbox"></div>
             <div id="cardbox1" class="cardbox"></div>
-
         </div>`;
     
         const cardBoxA = document.getElementById('cardbox0');
         const cardBoxB = document.getElementById('cardbox1');
     
         const cardsArr = [];
-    
         for (let i = 0; i < this.properties.deckSize; i++) {
             if (i >= this.properties.deckSize / 2) {
                 cardsArr.push(`<div id="card${i}" class="card">
@@ -88,7 +85,6 @@ export class Game {
                 </div>`);
             };  
         };
-    
         cardsArr.sort(() => Math.random() - 0.5);
     
         cardBoxA.innerHTML = `${cardsArr.slice(0, cardsArr.length / 2)}`.replace(/,/g, '');
@@ -104,10 +100,9 @@ export class Game {
             const innerGameTimer = document.getElementById('game-timer');
             innerGameTimer.style.transition = '400ms';
             innerGameTimer.style.opacity = '100%';
-        }, 200);
+        }, 100);
 
         this.reveal(2000);
-        
         setTimeout(() => { InGame.newTimer(); }, 900);
 
     };
@@ -118,13 +113,9 @@ export class Game {
     
         for (let i = 0; i <= 9; i++) {
             const elem = document.getElementById(`card${i}`).style;
-            
             elem.transition = '700ms';
             elem.transform = open;
-    
-            setTimeout(() => {
-                elem.transform = close;      
-            }, timer);
+            setTimeout(() => { elem.transform = close; }, timer);
         };
     };
 
@@ -156,7 +147,6 @@ export class Game {
             this.endGame(this.properties.matches, this.properties.deck / 2);
 
             const pair = x => {
-
                 const y = document.getElementById(`card${x}`);
                 y.parentNode.replaceChild(y.cloneNode(true), y);
                 
@@ -167,17 +157,14 @@ export class Game {
                     z.style.boxShadow = 'none';
                     z.style.zIndex = 0;
                 }, time);
-
             };
     
             pair(this.properties.arr[0]);
             pair(this.properties.arr[1]);
             this.properties.arr = [];
-    
         };
     
         if (this.properties.arr.length >= 2) {
-    
             this.properties.score -= 500;
             InGame.currentScore(-500);
     
@@ -195,17 +182,11 @@ export class Game {
                 x.style.zIndex = 0;
             };
     
-            setTimeout(() => {
-                unpair(eA);
-                unpair(eB);
-            }, time - 100);
-    
+            setTimeout(() => { unpair(eA); unpair(eB); }, time - 100);
         };
     };
 
-
     static card(value) {
-
         this.properties.deck++;
         
         const element = document.getElementById(`card${value}`);
@@ -215,9 +196,7 @@ export class Game {
             this.properties.arr.push(value);
             this.flipper(element);
         });
-    
     };
-
 
     static endGame(key, value) {
         if (key === value) {
@@ -233,23 +212,17 @@ export class Game {
     
             if (totalScore >= 4500) {
                 GameEndScreen.create('s', score, timeScore, totalScore);
-            }
-            else if (totalScore >= 3500) {
+            } else if (totalScore >= 3500) {
                 GameEndScreen.create('a', score, timeScore, totalScore);
-            }
-            else if (totalScore >= 2500) {
+            } else if (totalScore >= 2500) {
                 GameEndScreen.create('b', score, timeScore, totalScore);
-            }
-            else if (totalScore >= 1500) {
+            } else if (totalScore >= 1500) {
                 GameEndScreen.create('c', score, timeScore, totalScore);
-            }
-            else if (totalScore >= 500) {
+            } else if (totalScore >= 500) {
                 GameEndScreen.create('d', score, timeScore, totalScore);
-            }
-            else {
+            } else {
                 GameEndScreen.create('f', score, timeScore, totalScore);
             };
-    
         };
     };
 

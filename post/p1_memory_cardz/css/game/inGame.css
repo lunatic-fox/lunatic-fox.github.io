@@ -41,7 +41,6 @@
     text-align: right;
     width: 98%;
     opacity: 0%;
-    /* background-color: brown; */
 }
 
 #pause-game-btn {
@@ -58,7 +57,6 @@
     height: 100%;
     backdrop-filter: blur(4px);
     background: rgba(0, 0, 0, 0.432);
-    /* background: rgba(64, 224, 208, 0.356); */
     opacity: 0%;
 }
 
@@ -73,7 +71,7 @@
 .p-btn, .e-btn {
     width: 10%;
     margin: 1% 0;
-    padding: 5px 5%;
+    padding: 5px 10%;
     border-radius: 5px;
     font-family: 'Orbitron', sans-serif;
     font-size: 4vh;
@@ -93,9 +91,6 @@
 .e-btn {
     width: 80%;
 }
-/* #end-card {
-    justify-content: space-around;
-} */
 
 #end-card span {
     color: #333;
@@ -104,17 +99,14 @@
 }
 
 .half-card1, .half-card2 {
-    
     height: 100%;
 }
 
 .half-card1 {
     width: 50%;
-    /* background: tomato; */
 }
 .half-card2 {
     width: 40%;
-    /* background: rgb(105, 71, 255); */
 }
 
 .grey-card {
@@ -137,7 +129,6 @@
     margin-bottom: 2%;
 }
 
-
 #end-score span {
     font-size: 4vh;
     color: var(--light-text);
@@ -150,7 +141,6 @@
     margin-top: 2%;
     text-indent: 10px;
     color: #333 !important;
-    /* font-size: 4vh !important; */
 }
 
 #end-score sub {

@@ -159,3 +159,34 @@ footer {
     background: linear-gradient(45deg, transparent  10%, var(--header-bg));
 }
 
+.project-description {
+    width: 95%;
+    padding: 0 2.5%;
+    flex-grow: 1;
+}
+
+.project-description p {
+    width: 100%;
+    margin: 0;
+    padding: 1% 0;
+    text-align: center;
+}
+#game-page-d-box {
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.459);
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#card-page {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#card-page img {
+    height: 70%;
+}

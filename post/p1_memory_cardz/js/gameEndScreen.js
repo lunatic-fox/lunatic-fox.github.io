@@ -1,4 +1,10 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
+`use strict`
 import { InGame } from "./inGame.js";
+import { GameTranslation } from "./gameTranslation.js";
 
 export class GameEndScreen {
 
@@ -10,35 +16,32 @@ export class GameEndScreen {
 
     static create(rankLetter, score, timeBonusScore, totalScore) {
 
+        const w = GameTranslation.language();
+
         const endScreen = `
             <section id="end-card" class="flex">
-
                 <section class="flexblock half-card1">
                     <div id="rank" class="flex grey-card">
                         <img src="./img/rank${rankLetter}.png">
                     </div>
                     <span>rank</span>
                 </section>
-
                 <section class="flexblock half-card2">
                     <div id="end-score" class="flexblock grey-card">
-                        <span class="score-desc">score</span>
+                        <span class="score-desc">${w.score}</span>
                         <span>${score} <sub>pts</sub><br></span>
-                        <span class="score-desc">time bonus</span>
+                        <span class="score-desc">${w.timeBonus}</span>
                         <span>${timeBonusScore} <sub>pts</sub><br></span>
-                        <span class="score-desc">total score</span>
+                        <span class="score-desc">${w.totalScore}</span>
                         <span>${totalScore} <sub>pts</sub><br></span>
                     </div>
-
                     <div id="reset-game-btn" class="e-btn flex">
-                        reset game
+                        ${w.resetGame}
                     </div>
                     <div id="main-menu-btn" class="e-btn flex">
-                        main menu
+                        ${w.mainMenu}
                     </div>
-
                 </section>
-
             </section>`;
 
         const endNode = document.createElement('div');

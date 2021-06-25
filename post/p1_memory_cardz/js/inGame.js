@@ -1,5 +1,11 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
+`use strict`
 import { Game } from "./game.js";
 import { GameTitleScreen } from "./gameTitleScreen.js";
+import { GameTranslation } from "./gameTranslation.js";
 
 export class InGame {
 
@@ -26,12 +32,14 @@ export class InGame {
 
     static timer() {
         const self = InGame;
+
         if (self.properties.sec > 59) {
             self.properties.sec = 0;
         
             if (self.properties.min > 59) {
                 self.properties.min = 0;
-                self.properties.hr++;
+                self.resetProperties();
+                setTimeout(() => { self.mainMenu(); }, 0);
             };
         
             if (self.properties.min < 10) {
@@ -39,9 +47,7 @@ export class InGame {
             } else {
                 self.properties.minutes.innerHTML = self.properties.min++;
             };
-        
         };
-        
         if (self.properties.sec < 10) {
             self.properties.seconds.innerHTML = `0${self.properties.sec++}`;
         } else {
@@ -51,19 +57,19 @@ export class InGame {
 
     static pauseGame() {
 
+        const w = GameTranslation.language();
+
         const paused = `
         <section id="pause-card" class="flexblock">
-
             <div id="resume-btn" class="p-btn flex">
-                resume
+                ${w.resume}
             </div>
             <div id="reset-game-btn" class="p-btn flex">
-                reset game
+                ${w.resetGame}
             </div>
             <div id="main-menu-btn" class="p-btn flex">
-                main menu
+                ${w.mainMenu}
             </div>
-
         </section>`;
 
         const pauseNode = document.createElement('div');
@@ -81,21 +87,23 @@ export class InGame {
 
     };
 
+    static resetProperties() {
+        window.clearInterval(this.properties.gameTimer);
+        this.properties.sec = 0;
+        this.properties.min = 0;
+        Game.properties.deck = 0;
+        Game.properties.arr = [];
+        Game.properties.score = 0;
+        Game.properties.matches = 0;
+    };
+
     static resetGame() {
         const currentGame = this.properties.currentGameElem;
         currentGame.style.transition = '700ms';
         currentGame.style.opacity = '0%';
 
         setTimeout(() => {
-            window.clearInterval(this.properties.gameTimer);
-            this.properties.sec = 0;
-            this.properties.min = 0;
-            
-            Game.properties.deck = 0;
-            Game.properties.arr = [];
-            Game.properties.score = 0;
-            Game.properties.matches = 0;
-
+            this.resetProperties();
             currentGame.remove();
             Game.newGame();
         }, 700);
@@ -107,9 +115,7 @@ export class InGame {
         currentGame.style.opacity = '0%';
 
         setTimeout(() => {
-            window.clearInterval(this.properties.gameTimer);
-            this.properties.sec = 0;
-            this.properties.min = 0;
+            this.resetProperties();
             currentGame.remove();
             GameTitleScreen.create();
         }, 700);
@@ -143,10 +149,7 @@ export class InGame {
             this.properties.mainMenuBtn.addEventListener('click', ()=> {
                 this.mainMenu();
             });
-
         });
-
-        
-
     };
+
 };
