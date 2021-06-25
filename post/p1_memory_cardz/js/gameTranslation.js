@@ -12,11 +12,11 @@ export class GameTranslation {
     static language() {
         if (this.currentLanguage == null) {
             this.currentLanguage = navigator.language;
-            return this.currentLanguage == 'en' ? this.english 
-            : this.currentLanguage == 'pt' ? this.portuguese 
+            return this.currentLanguage == 'en' || this.currentLanguage == 'en-US' ? this.english 
+            : this.currentLanguage == 'pt' || this.currentLanguage == 'pt-BR' ? this.portuguese 
             : this.english;
-        } else return this.currentLanguage == 'en' ? this.english 
-            : this.currentLanguage == 'pt' ? this.portuguese 
+        } else return this.currentLanguage == 'en' || this.currentLanguage == 'en-US' ? this.english 
+            : this.currentLanguage == 'pt' || this.currentLanguage == 'ept-BR' ? this.portuguese 
             : this.english;
     };
 
@@ -101,7 +101,8 @@ export class GameTranslation {
     static portuguese = {
 
         // Page description
-        gamePageDescription: `<p> 
+        gamePageDescription: `<div id="game-page-d-box" class="flexblock">
+        <p> 
             Este projeto é um jogo da memória de 10 cartas. 
         </p>
         <p> 
