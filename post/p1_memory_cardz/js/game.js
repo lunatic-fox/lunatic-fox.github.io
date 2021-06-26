@@ -210,7 +210,9 @@ export class Game {
             const timeScore = (60 - ((minutes * 60) + seconds * 1)) * 10;
             const totalScore = score + timeScore;
     
-            if (totalScore >= 4500) {
+            if (totalScore >= 4500 && timeScore >= 560) {
+                GameEndScreen.create('ss', score, timeScore, totalScore);
+            } else if (totalScore >= 4500 && timeScore >= 500) {
                 GameEndScreen.create('s', score, timeScore, totalScore);
             } else if (totalScore >= 3500) {
                 GameEndScreen.create('a', score, timeScore, totalScore);

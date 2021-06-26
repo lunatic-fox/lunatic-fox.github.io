@@ -48,7 +48,10 @@
 }
 
 #about-text p, #about-text span {
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
+    margin-right: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
     text-indent: 20px;
 }
 
@@ -60,7 +63,7 @@
     background: rgb(34, 34, 34);
 }
 .about-author {
-    height: 70px;
+    height: 90px;
 }
 .about-contacts a {
     height: 100%;
