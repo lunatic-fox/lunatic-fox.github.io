@@ -1,3 +1,7 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 @media only screen and (orientation:portrait) {
@@ -48,7 +52,6 @@
 }
 
 #about-text p, #about-text span {
-    /* font-family: 'Orbitron', sans-serif; */
     margin-right: 15px;
     font-size: 1.1rem;
     font-weight: 700;

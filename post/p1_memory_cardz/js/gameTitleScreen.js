@@ -84,15 +84,15 @@ export class GameTitleScreen {
         });
 
         // Language
-        let langStatus = GameTranslation.currentLanguage == 'pt' ? false : true;
+        let langStatus = GameTranslation.cLang == 'pt' ? false : true;
         this.elem.language.addEventListener('click', () => {
 
             if (langStatus) {
-                GameTranslation.currentLanguage = 'pt';
+                GameTranslation.cLang = 'pt';
                 this.create();
                 langStatus = false;
             } else {
-                GameTranslation.currentLanguage = 'en';
+                GameTranslation.cLang = 'en';
                 this.create();
                 langStatus = true;              
             }; 

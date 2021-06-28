@@ -1,3 +1,7 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
 @import url('utils.css');
 @import url('/post/p1_memory_cardz/css/game/game.css');
 
@@ -161,7 +165,6 @@ footer {
 
 .project-description {
     width: 95%;
-    padding: 0 2.5%;
     flex-grow: 1;
 }
 
@@ -174,19 +177,16 @@ footer {
 #game-page-d-box {
     font-weight: 700;
     color: #fff;
-    background: rgba(0, 0, 0, 0.459);
-    width: 60%;
+    box-shadow: inset 0 0 15px rgb(0, 0, 0);
+    background: rgba(34, 34, 34, 0.637);
+    width: 70%;
     padding: 20px;
+    margin: 20px 0;
     border-radius: 10px;
 }
-
-#card-page {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
+#game-img {
+    width: 40%;
 }
-
-#card-page img {
-    height: 70%;
+#open-game-btn {
+    width: 40%;
 }

@@ -7,38 +7,39 @@ export class GameTranslation {
 
     static ver = '1.0';
 
-    static currentLanguage = null;
+    static cLang = null;
 
     static language() {
-        if (this.currentLanguage == null) {
-            this.currentLanguage = navigator.language;
-            return this.currentLanguage == 'en' || this.currentLanguage == 'en-US' ? this.english 
-            : this.currentLanguage == 'pt' || this.currentLanguage == 'pt-BR' ? this.portuguese 
-            : this.english;
-        } else return this.currentLanguage == 'en' || this.currentLanguage == 'en-US' ? this.english 
-            : this.currentLanguage == 'pt' || this.currentLanguage == 'ept-BR' ? this.portuguese 
-            : this.english;
+        if (this.cLang == null) {
+            this.cLang = navigator.language;
+            return this.cLang == 'en' || this.cLang == 'en-US' ? this.en 
+            : this.cLang == 'pt' || this.cLang == 'pt-BR' ? this.pt 
+            : this.en;
+        } else return this.cLang == 'en' || this.cLang == 'en-US' ? this.en 
+            : this.cLang == 'pt' || this.cLang == 'ept-BR' ? this.pt 
+            : this.en;
     };
 
-    static english = {
+    static en = {
 
         // Page description
-        gamePageDescription: `<div id="game-page-d-box" class="flexblock">
-        <p> 
-            This project is a 10 card memory game. 
-        </p>
-        <p> 
-            The main objective is to find the pairs of cards in the shortest time possible. 
-        </p>
-        <p> 
-            Also, the least amount of moves, the better  your final score will be. 
-        </p>
-        <p> 
-            Come on, just click the button below! 
-        </p>
-        <div id="open-game-btn" class="i-btn flex"> play </div>
-            <div id="card-page" class="flex">
-                <img  src="/post/p1_memory_cardz/img/cards.png">
+        gamePageDescription: `
+        <div id="game-page-d-box" class="flex">            
+            <img id="game-img" src="/post/p1_memory_cardz/img/cards.png">
+            <div class="flexblock">
+                <p> 
+                    This project is a 10 card memory game.
+                </p>
+                <p> 
+                    The main objective is to find the pairs of cards in the shortest time possible. 
+                </p>
+                <p> 
+                    Also, the least amount of moves, the better  your final score will be. 
+                </p>
+                <p> 
+                    Come on, just click the button below! 
+                </p>
+                <div id="open-game-btn" class="i-btn flex"> play </div>
             </div>
         </div>`,
 
@@ -98,25 +99,26 @@ export class GameTranslation {
         resetGame: 'reset game',
     };
     
-    static portuguese = {
+    static pt = {
 
         // Page description
-        gamePageDescription: `<div id="game-page-d-box" class="flexblock">
-        <p> 
-            Este projeto é um jogo da memória de 10 cartas. 
-        </p>
-        <p> 
-            O objetivo principal é encontrar os pares de cartas no menor tempo possível. 
-        </p>
-        <p> 
-            Além disso, quanto menor a quantidade de movimentos, melhor será sua pontuação final. 
-        </p>
-        <p> 
-            Vamos lá, basta clicar no botão abaixo! 
-        </p>
-        <div id="open-game-btn" class="i-btn flex"> jogar </div>
-            <div id="card-page" class="flex">
-                <img  src="/post/p1_memory_cardz/img/cards.png">
+        gamePageDescription: `
+        <div id="game-page-d-box" class="flex">            
+            <img id="game-img" src="/post/p1_memory_cardz/img/cards.png">
+            <div class="flexblock">
+                <p> 
+                    Este projeto é um jogo da memória de 10 cartas. 
+                </p>
+                <p> 
+                    O objetivo principal é encontrar os pares de cartas no menor tempo possível. 
+                </p>
+                <p> 
+                    Além disso, quanto menor a quantidade de movimentos, melhor será sua pontuação final. 
+                </p>
+                <p> 
+                    Vamos lá, basta clicar no botão abaixo! 
+                </p>
+                <div id="open-game-btn" class="i-btn flex"> jogar </div>
             </div>
         </div>`,
 

@@ -1,3 +1,7 @@
+/**
+ * @author Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * @copyright Josélio de S. C. Júnior 2021
+ */
 @media only screen and (orientation:portrait) {
     #game-timer, #game-timer span, #end-card span {
         font-size: 4vw !important;
