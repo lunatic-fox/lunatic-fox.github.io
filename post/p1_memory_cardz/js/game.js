@@ -87,8 +87,8 @@ export class Game {
         };
         cardsArr.sort(() => Math.random() - 0.5);
     
-        cardBoxA.innerHTML = `${cardsArr.slice(0, cardsArr.length / 2)}`.replace(/,/g, '');
-        cardBoxB.innerHTML = `${cardsArr.slice(cardsArr.length / 2 , cardsArr.length)}`.replace(/,/g, '');
+        cardBoxA.innerHTML = `${cardsArr.slice(0, cardsArr.length / 2).join('')}`;
+        cardBoxB.innerHTML = `${cardsArr.slice(cardsArr.length / 2 , cardsArr.length).join('')}`;
         
         setTimeout(() => {
             for (let i = 0; i <= 9; i++) { this.card(i); };
