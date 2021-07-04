@@ -6,11 +6,43 @@
 import {githubColors, Layout} from '../../../js/Classes.js';
 import {Color} from '../../../js/Color.js';
 
+const translation = {
+    translate() {
+        if (navigator.language == 'pt' || navigator.language == 'pt-BR') {
+            ids.title.innerHTML = this.pt_br.title;
+            ids.description.innerHTML = this.pt_br.description;
+        } else {
+            ids.title.innerHTML = this.en_us.title;
+            ids.description.innerHTML = this.en_us.description;
+        }
+    },
+    en_us: {
+        title: `Github known programming and markup language colors`,
+        description: `
+        Original Github's data file: <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">LINK</a>
+            <br>MIT License: <a href="https://github.com/github/linguist/blob/master/LICENSE">LINK</a>
+            <div style="margin-top: 15px;">
+                Languages total number: <span id="lang-number"></span>
+            </div>`
+    },
+    pt_br: {
+        title: `Cores das linguagens de programação e marcação conhecidas pelo Github`,
+        description: `
+        Arquivo de dados original do Github: <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">LINK</a>
+            <br>Licença MIT: <a href="https://github.com/github/linguist/blob/master/LICENSE">LINK</a>
+            <div style="margin-top: 15px;">
+                Número total de linguagens: <span id="lang-number"></span>
+            </div>`
+    }
+};
+
 const ids = {
     CONTENT: 'content',
     loading: document.getElementById('loading-screen'),
     starThemeBtn: document.getElementById('star-theme-btn'),
-    themeLinkElement: document.getElementById('theme')
+    themeLinkElement: document.getElementById('theme'),
+    title: document.getElementById('title'),
+    description: document.getElementById('description')
 };
 
 class main {
@@ -83,8 +115,9 @@ class main {
             });
             
         };
-        
-        document.getElementById('lang-number').innerHTML = `Languages total number: ${arr.length}`;
+
+        translation.translate();
+        document.getElementById('lang-number').innerHTML = arr.length;
         
     };
 

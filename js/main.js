@@ -25,10 +25,7 @@ class main {
 
     static async getData() {
         const response = navigator.language == 'pt' ||
-        navigator.language == 'pt-BR' ? cardsPt_br :
-        navigator.language == 'en' ||
-        navigator.language == 'en-US' ? cardsEn_us :
-        cardsEn_us;
+        navigator.language == 'pt-BR' ? cardsPt_br : cardsEn_us;
         Post.makeCard(response, ids.CONTENT);
     };
 
