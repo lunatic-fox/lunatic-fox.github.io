@@ -6,12 +6,6 @@
 import {Color} from './Color.js';
 export const githubColors = await Color.github();
 
-const C_INFO = `
-    color: #0d9c00;
-    border-radius: 2px;
-    font-size: 15px; 
-    font-weight: bold;`;
-
 export class Layout {
 
     static themePicker(input, output) {
@@ -56,6 +50,8 @@ export class Post extends Color {
 
         static makeCard(data, output) {
         
+        data.sort((a, b) => b.ID - a.ID);
+
         const arr = [];
 
         for (let i = 0; i < data.length; i++) {
@@ -65,7 +61,8 @@ export class Post extends Color {
                 data[i]?.description,
                 data[i]?.tags)
             );
-        };
+        }
+
         document.getElementById(output).innerHTML = arr.toString().replace(/>,/gm, '>');
     };
 

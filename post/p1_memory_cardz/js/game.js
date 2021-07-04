@@ -210,17 +210,17 @@ export class Game {
             const timeScore = (60 - ((minutes * 60) + seconds * 1)) * 10;
             const totalScore = score + timeScore;
     
-            if (totalScore >= 4500 && timeScore >= 560) {
+            if (totalScore >= 5000 && timeScore >= 560) {
                 GameEndScreen.create('ss', score, timeScore, totalScore);
-            } else if (totalScore >= 4500 && timeScore >= 500) {
+            } else if (totalScore >= 5000 && timeScore >= 500) {
                 GameEndScreen.create('s', score, timeScore, totalScore);
-            } else if (totalScore >= 3500) {
+            } else if (totalScore >= 4500) {
                 GameEndScreen.create('a', score, timeScore, totalScore);
-            } else if (totalScore >= 2500) {
+            } else if (totalScore >= 3500) {
                 GameEndScreen.create('b', score, timeScore, totalScore);
-            } else if (totalScore >= 1500) {
+            } else if (totalScore >= 2500) {
                 GameEndScreen.create('c', score, timeScore, totalScore);
-            } else if (totalScore >= 500) {
+            } else if (totalScore >= 1500) {
                 GameEndScreen.create('d', score, timeScore, totalScore);
             } else {
                 GameEndScreen.create('f', score, timeScore, totalScore);

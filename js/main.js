@@ -3,7 +3,8 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import cards1 from '../data/post/cards1.js';
+import cardsPt_br from '../data/post/cards_pt-br.js';
+import cardsEn_us from '../data/post/cards_en-us.js';
 import { Layout, Post } from './Classes.js';
 
 const ids = {
@@ -16,37 +17,18 @@ const ids = {
     numberText: document.getElementById('page-number')
 };
 
-const pagesDef = {
-    index: 1,
-    length: 1
-};
-
 class main {
 
     static setLayout() {
         Layout.themePicker(ids.starThemeBtn, ids.themeLinkElement);
     };
 
-    static pageSelector(element, direction) {
-        element.addEventListener('click', async ()=> {
-            if (direction && pagesDef.index < pagesDef.length)
-            pagesDef.index++;
-
-            if (!direction && pagesDef.index > 1)
-            pagesDef.index--;
-
-            await this.getData(pagesDef.index);
-            ids.numberText.innerHTML = pagesDef.index;
-        });
-    };
-
-    static selector(goAhead, goBack) {
-        this.pageSelector(goAhead, true);
-        this.pageSelector(goBack, false);
-    };
-
     static async getData() {
-        const response = cards1;
+        const response = navigator.language == 'pt' ||
+        navigator.language == 'pt-BR' ? cardsPt_br :
+        navigator.language == 'en' ||
+        navigator.language == 'en-US' ? cardsEn_us :
+        cardsEn_us;
         Post.makeCard(response, ids.CONTENT);
     };
 
@@ -66,7 +48,6 @@ class main {
     static get init() {
         this.loadEnd();
         window.addEventListener('resize', this.setLayout);
-        this.selector(ids.arrowGo, ids.arrowBack);
     };
 };
 
