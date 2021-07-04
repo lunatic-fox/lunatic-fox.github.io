@@ -9,9 +9,9 @@ import { GameTranslation } from "./gameTranslation.js";
 export class GameEndScreen {
 
     static properties = {
-        get currentGameElem() { return document.getElementById('current-game'); },
-        get resetGameBtn() { return document.getElementById('reset-game-btn'); },
-        get mainMenuBtn() { return document.getElementById('main-menu-btn'); } 
+        currentGameElem: () => document.getElementById('current-game'),
+        resetGameBtn: () => document.getElementById('reset-game-btn'),
+        mainMenuBtn: () =>  document.getElementById('main-menu-btn') 
     };
 
     static create(rankLetter, score, timeBonusScore, totalScore) {
@@ -48,7 +48,7 @@ export class GameEndScreen {
         endNode.id = 'end-screen';
         endNode.classList = 'flex';
         endNode.innerHTML = endScreen;
-        this.properties.currentGameElem.appendChild(endNode);
+        this.properties.currentGameElem().appendChild(endNode);
 
         setTimeout(() => {
             const endCard = document.getElementById('end-screen');
@@ -56,10 +56,10 @@ export class GameEndScreen {
             endCard.style.opacity = '100%';
         }, 0);
 
-        this.properties.resetGameBtn.addEventListener('click', ()=> {
+        this.properties.resetGameBtn().addEventListener('click', ()=> {
             InGame.resetGame();
         });
-        this.properties.mainMenuBtn.addEventListener('click', ()=> {
+        this.properties.mainMenuBtn().addEventListener('click', ()=> {
             InGame.mainMenu();
         });
 

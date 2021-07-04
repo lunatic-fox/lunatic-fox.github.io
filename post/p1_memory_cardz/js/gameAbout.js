@@ -5,7 +5,7 @@ import { GameTranslation } from "./gameTranslation.js";
 export class GameAbout {
 
     static elem = {
-        get aboutScreen() { return document.getElementById('about-screen') },
+        aboutScreen: () => document.getElementById('about-screen')
     };
 
     static create() {
@@ -45,7 +45,7 @@ export class GameAbout {
                     document.exitFullscreen();
                 });
             };
-            const gameCardAbout = this.elem.aboutScreen;
+            const gameCardAbout = this.elem.aboutScreen();
             gameCardAbout.style.transition = '1000ms';
             gameCardAbout.style.opacity = '100%';
         }, timer + 50);
@@ -56,7 +56,7 @@ export class GameAbout {
 
         backbtn.addEventListener('click', ()=> {
             const timer = 400;
-            const gameCardAbout = this.elem.aboutScreen;
+            const gameCardAbout = this.elem.aboutScreen();
             gameCardAbout.style.transition = `${timer}ms`;
             gameCardAbout.style.opacity = '0%';
 

@@ -14,20 +14,20 @@ export class InGame {
         min: 1,
         hr: 0,
         gameTimer: 0,
-        get currentGameElem() { return document.getElementById('current-game'); },
-        get pauseScreenElem() { return document.getElementById('pause-screen'); },
-        get seconds() { return document.getElementById('game-timer-sec'); },
-        get minutes() { return document.getElementById('game-timer-min'); },
-        get pauseBtn() { return document.getElementById('pause-game-btn'); },
-        get resumeBtn() { return document.getElementById('resume-btn'); },
-        get resetGameBtn() { return document.getElementById('reset-game-btn'); },
-        get mainMenuBtn() { return document.getElementById('main-menu-btn'); },
-        get currentScoreElem() { return document.getElementById('current-score') }       
+        currentGameElem: () => document.getElementById('current-game'),
+        pauseScreenElem: () => document.getElementById('pause-screen'),
+        seconds: () => document.getElementById('game-timer-sec'),
+        minutes: () => document.getElementById('game-timer-min'),
+        pauseBtn: () => document.getElementById('pause-game-btn'),
+        resumeBtn: () => document.getElementById('resume-btn'),
+        resetGameBtn: () => document.getElementById('reset-game-btn'),
+        mainMenuBtn: () => document.getElementById('main-menu-btn'),
+        currentScoreElem: () => document.getElementById('current-score')    
     };
 
     static currentScore(value) {
-        const currentValue = this.properties.currentScoreElem.innerHTML;
-        this.properties.currentScoreElem.innerHTML = +currentValue + value;
+        const currentValue = this.properties.currentScoreElem().innerHTML;
+        this.properties.currentScoreElem().innerHTML = +currentValue + value;
     };
 
     static timer() {
@@ -43,15 +43,15 @@ export class InGame {
             };
         
             if (self.properties.min < 10) {
-                self.properties.minutes.innerHTML = `0${self.properties.min++}`;
+                self.properties.minutes().innerHTML = `0${self.properties.min++}`;
             } else {
-                self.properties.minutes.innerHTML = self.properties.min++;
+                self.properties.minutes().innerHTML = self.properties.min++;
             };
         };
         if (self.properties.sec < 10) {
-            self.properties.seconds.innerHTML = `0${self.properties.sec++}`;
+            self.properties.seconds().innerHTML = `0${self.properties.sec++}`;
         } else {
-            self.properties.seconds.innerHTML = self.properties.sec++;
+            self.properties.seconds().innerHTML = self.properties.sec++;
         };
     };
 
@@ -77,10 +77,10 @@ export class InGame {
         pauseNode.classList = 'flex';
         pauseNode.innerHTML = paused;
 
-        this.properties.currentGameElem.appendChild(pauseNode);
+        this.properties.currentGameElem().appendChild(pauseNode);
 
         setTimeout(() => {
-            const pauseElem = this.properties.pauseScreenElem;
+            const pauseElem = this.properties.pauseScreenElem();
             pauseElem.style.transition = '1s';
             pauseElem.style.opacity = '100%';
         }, 0);
@@ -98,7 +98,7 @@ export class InGame {
     };
 
     static resetGame() {
-        const currentGame = this.properties.currentGameElem;
+        const currentGame = this.properties.currentGameElem();
         currentGame.style.transition = '700ms';
         currentGame.style.opacity = '0%';
 
@@ -110,7 +110,7 @@ export class InGame {
     };
 
     static mainMenu() {
-        const currentGame = this.properties.currentGameElem;
+        const currentGame = this.properties.currentGameElem();
         currentGame.style.transition = '700ms';
         currentGame.style.opacity = '0%';
 
@@ -126,12 +126,12 @@ export class InGame {
         let setTime = window.setInterval(this.timer, 1000);
         this.properties.gameTimer = setTime;
 
-        this.properties.pauseBtn.addEventListener('click', () => {
+        this.properties.pauseBtn().addEventListener('click', () => {
             window.clearInterval(setTime);
             this.pauseGame();
 
-            this.properties.resumeBtn.addEventListener('click', ()=> {
-                const pauseElem = this.properties.pauseScreenElem;
+            this.properties.resumeBtn().addEventListener('click', ()=> {
+                const pauseElem = this.properties.pauseScreenElem();
                 pauseElem.style.transition = '1s';
                 pauseElem.style.opacity = '0%';
     
@@ -142,11 +142,11 @@ export class InGame {
                 }, 1100);
             });
 
-            this.properties.resetGameBtn.addEventListener('click', ()=> {
+            this.properties.resetGameBtn().addEventListener('click', ()=> {
                 this.resetGame();
             });
 
-            this.properties.mainMenuBtn.addEventListener('click', ()=> {
+            this.properties.mainMenuBtn().addEventListener('click', ()=> {
                 this.mainMenu();
             });
         });

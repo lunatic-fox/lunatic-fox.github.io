@@ -203,8 +203,8 @@ export class Game {
 
             window.clearInterval(InGame.properties.gameTimer);
 
-            const minutes = InGame.properties.minutes.innerHTML;
-            const seconds = InGame.properties.seconds.innerHTML;
+            const minutes = InGame.properties.minutes().innerHTML;
+            const seconds = InGame.properties.seconds().innerHTML;
 
             const score = this.properties.score;
             const timeScore = (60 - ((minutes * 60) + seconds * 1)) * 10;

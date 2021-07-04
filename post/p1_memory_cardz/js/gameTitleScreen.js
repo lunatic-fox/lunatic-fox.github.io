@@ -10,11 +10,11 @@ import { GameTranslation } from "./gameTranslation.js";
 export class GameTitleScreen {
 
     static elem = {
-        get titleScreen() { return document.getElementById('title-screen') },
-        get newGame() { return document.getElementById('new-game-btn') },
-        get about() { return document.getElementById('about-game-btn') },
-        get language() { return document.getElementById('language-game-btn') },
-        get quit() { return document.getElementById('quit-game-btn') }
+        titleScreen: () => document.getElementById('title-screen'),
+        newGame: () => document.getElementById('new-game-btn'),
+        about: () => document.getElementById('about-game-btn'),
+        language: () => document.getElementById('language-game-btn'),
+        quit: () => document.getElementById('quit-game-btn')
     };
 
     static create() {
@@ -57,8 +57,8 @@ export class GameTitleScreen {
         `;
 
         Game.properties.content.innerHTML = titleScreen;
-        this.elem.titleScreen.style.transition = '400ms';
-        this.elem.titleScreen.style.opacity = '100%';
+        this.elem.titleScreen().style.transition = '400ms';
+        this.elem.titleScreen().style.opacity = '100%';
         this.initButtons();
 
     };
@@ -70,14 +70,14 @@ export class GameTitleScreen {
         });
 
         // New game
-        this.elem.newGame.addEventListener('click', ()=> {
+        this.elem.newGame().addEventListener('click', ()=> {
 
             const timer = 400;
-            this.elem.titleScreen.style.transition = `${timer}ms`;
-            this.elem.titleScreen.style.opacity = '0%';
+            this.elem.titleScreen().style.transition = `${timer}ms`;
+            this.elem.titleScreen().style.opacity = '0%';
 
             setTimeout(() => {
-                this.elem.titleScreen.style.display = 'none';
+                this.elem.titleScreen().style.display = 'none';
                 Game.newGame();
             }, timer);
 
@@ -85,7 +85,7 @@ export class GameTitleScreen {
 
         // Language
         let langStatus = GameTranslation.cLang == 'pt' ? false : true;
-        this.elem.language.addEventListener('click', () => {
+        this.elem.language().addEventListener('click', () => {
 
             if (langStatus) {
                 GameTranslation.cLang = 'pt';
@@ -99,12 +99,12 @@ export class GameTitleScreen {
         });
 
         // About
-        this.elem.about.addEventListener('click', ()=> {
+        this.elem.about().addEventListener('click', ()=> {
             GameAbout.create();
         });
 
         // Quit
-        this.elem.quit.addEventListener('click', ()=> {
+        this.elem.quit().addEventListener('click', ()=> {
             document.exitFullscreen();
             Game.properties.content.style.display = 'none';
         });
