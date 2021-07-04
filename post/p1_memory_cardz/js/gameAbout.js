@@ -11,7 +11,7 @@ export class GameAbout {
     static create() {
         const w = GameTranslation.language();
         const timer = 400;
-        const gameCard = GameTitleScreen.elem.titleScreen;
+        const gameCard = GameTitleScreen.elem.titleScreen();
         gameCard.style.transition = `${timer}ms`;
         gameCard.style.opacity = '0%';
         
