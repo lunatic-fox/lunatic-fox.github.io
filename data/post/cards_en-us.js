@@ -43,6 +43,17 @@ export default [
         </p>`,
         href: `https://joseliojunior.github.io/post/p1_memory_cardz/index.html`,
         tags: `javascript, html, css`
-    }
+    },
+
+    {
+        ID: 4,
+        title: `KolorZ`,
+        description: `
+        <p>
+            Personal project to color conversion and to Kolorz.js class test.
+        </p>`,
+        href: `https://joseliojunior.github.io/post/p2_kolorz/index.html`,
+        tags: `javascript, html, css`
+    } 
     
 ]
