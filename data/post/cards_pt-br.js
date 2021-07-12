@@ -47,7 +47,7 @@ export default [
         title: `KolorZ`,
         description: `
         <p>
-            Projeto pessoal para conversão de cores e para teste da classe Kolorz.js.
+            Projeto pessoal de conversor de cores. (hexadecimal, RGB e HSL)
         </p>`,
         href: `https://joseliojunior.github.io/kolorz/`,
         tags: `javascript, html, css`

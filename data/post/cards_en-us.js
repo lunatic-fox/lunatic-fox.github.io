@@ -50,7 +50,7 @@ export default [
         title: `KolorZ`,
         description: `
         <p>
-            Personal project to color conversion and to Kolorz.js class test.
+            Personal project of color converter. (hexadecimal, RGB and HSL)
         </p>`,
         href: `https://joseliojunior.github.io/kolorz/`,
         tags: `javascript, html, css`
