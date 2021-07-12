@@ -17,7 +17,7 @@ export default [
         ID: 2,
         title: `Github programming and markup language colors`,
         description: `A web project to present all programming and markup language colors known by Github.`,
-        href: `https://joseliojunior.github.io/post/p0_github_colors/index.html`,
+        href: `https://joseliojunior.github.io/github-colors/`,
         tags: `javascript, html, css`
     },
 
@@ -41,7 +41,7 @@ export default [
         <p>
             Practicing some code and some art in a game project was marvelous!
         </p>`,
-        href: `https://joseliojunior.github.io/post/p1_memory_cardz/index.html`,
+        href: `https://joseliojunior.github.io/memory-cardz/`,
         tags: `javascript, html, css`
     },
 
@@ -52,7 +52,7 @@ export default [
         <p>
             Personal project to color conversion and to Kolorz.js class test.
         </p>`,
-        href: `https://joseliojunior.github.io/post/p2_kolorz/index.html`,
+        href: `https://joseliojunior.github.io/kolorz/`,
         tags: `javascript, html, css`
     } 
     
