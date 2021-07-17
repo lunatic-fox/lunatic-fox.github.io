@@ -51,5 +51,16 @@ export default [
         </p>`,
         href: `https://joseliojunior.github.io/kolorz/`,
         tags: `javascript, html, css`
-    } 
+    },
+
+    {
+        ID: 5,
+        title: `Clone Netflix`,
+        description: `
+        <p>
+            Um dos projetos propostos pela DIO (Digital Innovation One) no bootcamp MRV front-end SPA developer.
+        </p>`,
+        href: `https://joseliojunior.github.io/netflix-clone/`,
+        tags: `javascript, html, css`
+    }
 ]
