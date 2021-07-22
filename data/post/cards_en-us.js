@@ -9,7 +9,7 @@ export default [
         title: `Antvars`,
         description: `&nbsp&nbsp&nbsp&nbsp<b>FRISANCHO, 1981.</b> <br><br>&nbsp&nbsp&nbsp Reference data for anthropometric measurements of arm circumference, triceps skinfold thickness and arm muscle circumference in females and males, aged 1 to 74 years, within the following percentiles: 5, 10, 25, 50, 75 , 90 and 95.`,
         href: `https://joseliojunior.github.io/data/other/antvars.json`,
-        tags: `JSON`
+        tags: `json`
     },
 
 
@@ -26,7 +26,7 @@ export default [
         title: `Tsaf`,
         description: `&nbsp&nbsp&nbsp&nbsp<b>CEAGESP, 2019.</b> <br><br>&nbsp&nbsp&nbsp Seasonal table of products sold at ETSP (Entreposto Terminal São Paulo) between 2015 and 2019.`,
         href: `https://joseliojunior.github.io/data/other/tsaf.json`,
-        tags: `JSON`
+        tags: `json`
     },
 
     
