@@ -1,9 +1,55 @@
 {
-    "__about__": "https://raw.githubusercontent.com/joseliojunior/joseliojunior.github.io/main/data/other/about/tsaf.yml",
-    "info": {
-        "citation": "CEAGESP, 2015-2019"
+/*
+    Title: tsaf
+    Description:
+        Tabela de sazonalidade dos produtos comercializados
+        no ETSP (Entreposto Terminal São Paulo) entre 2015 e 2019.
+
+    Author of this data file:
+        Josélio de S. C. Júnior
+    Github page:
+        https://github.com/joseliojunior
+
+    Author of the reference article of the data:
+        Companhia de Entrepostos e Armazéns Gerais de São Paulo.
+        abbreviation: CEAGESP
+    
+    Original content link: 
+        http://www.ceagesp.gov.br/wp-content/uploads/2015/05/produtos_epoca.pdf
+
+
+    List of abbreviations
+        o: others
+        f: fruits
+        v: vegetables
+        s: fish
+        l: leafy vegetables
+        0: poor harvest
+        1: steady harvest
+        2: heavy harvest
+
+
+    Structure
+
+        <G>: [0, 1, 2, ... 11, "<P>"]
+    
+        G = food group
+        P = food product
+    
+        Each position returns the correspondent
+        harvest stability value to the month.
+
+        For instance:
+            f[7][11] -> value of harvest stability of some fruit at December.
+
+            f[7][12] -> fruit's name: 'Acerola'
+*/
+
+    info: {
+        citation: "CEAGESP, 2015-2019"
     },
-    "d": [
+
+    o: [
         [1,0,0,0,0,0,0,2,2,2,2,1,"Alho Nacional"],
         [1,2,2,1,1,1,0,0,0,0,0,2,"Alho Estrang. Argentino"],
         [0,0,0,1,2,1,2,2,2,2,2,1,"Alho Estrang. Chinês"],
@@ -24,7 +70,8 @@
         [2,1,2,1,0,2,1,0,1,0,0,1,"Ovos Vermelhos"],
         [0,0,0,1,1,2,1,0,0,0,0,0,"Pinhão"]
     ],
-    "f": [
+    
+    f: [
         [0,1,1,2,2,2,1,1,1,2,1,1,"Abacate Avocado"],
         [0,0,0,0,0,0,0,0,2,2,2,2,"Abacate Breda/Margarida"],
         [2,2,0,0,0,0,0,0,0,0,0,0,"Abacate Fucks/Geada"],
@@ -125,7 +172,8 @@
         [1,1,2,2,2,1,0,0,0,0,0,0,"Uva Estr. Red Globe"],
         [1,1,2,2,1,0,0,0,0,0,0,0,"Uva Estr. Thompson"]
     ],
-    "l": [
+    
+    v: [
         [1,2,2,2,1,0,0,0,0,0,0,1,"Abóbora D'Agua"],
         [2,2,2,2,2,2,1,1,1,1,1,0,"Abóbora Japonesa"],
         [0,1,2,2,1,1,1,2,2,2,1,0,"Abóbora Moranga"],
@@ -176,7 +224,8 @@
         [1,0,0,1,0,0,0,0,1,2,2,2,"Vagem Macarrão"],
         [1,1,0,0,0,0,2,2,2,2,1,1,"Vagem Manteiga"]
     ],
-    "p": [
+    
+    s: [
         [0,0,0,0,0,0,0,2,0,0,0,0,"Abrotea"],
         [1,0,1,1,0,1,2,2,0,0,1,0,"Anchovas"],
         [0,2,2,0,0,1,1,2,1,1,1,2,"Atum"],
@@ -233,7 +282,8 @@
         [1,0,2,1,1,1,1,1,2,0,0,0,"Xaréu"],
         [1,2,1,2,1,0,0,2,0,2,1,2,"Xixarro"]
     ],
-    "v": [
+    
+    l: [
         [0,1,2,2,1,1,0,0,0,1,1,0,"Acelga"],
         [0,0,1,1,0,0,1,2,2,2,1,2,"Agrião"],
         [2,2,2,1,1,0,0,0,1,1,1,2,"Alface Americana"],
@@ -279,4 +329,5 @@
         [0,1,2,2,2,1,0,0,0,0,0,2,"Salsa"],
         [1,1,2,2,1,1,1,0,0,0,0,2,"Salsão"]
     ]
+
 }

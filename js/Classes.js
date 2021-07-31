@@ -3,8 +3,8 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 `use strict`
-import {Color} from './Color.js';
-export const githubColors = await Color.github();
+import { Kolorz } from './Kolorz-extended.js';
+import { githubColors } from './GithubColors.js';
 
 export class Layout {
 
@@ -46,10 +46,10 @@ export class Layout {
     };
 };
 
-export class Post extends Color {
+export class Post {
 
-        static makeCard(data, output) {
-        
+    static makeCard(data, output) {
+    
         data.sort((a, b) => b.ID - a.ID);
 
         const arr = [];
@@ -74,12 +74,14 @@ export class Post extends Color {
 
         for (let j = 0; j < tagArr.length; j++) {
             for (let i = 0; i < githubColors.length; i++) {
-                if (githubColors[i][0] == tagArr[j]) 
-                arr.push([githubColors[i][1], githubColors[i][2]]);            
+                if (githubColors[i][0].toLowerCase() == tagArr[j]) 
+                arr.push([githubColors[i][0], githubColors[i][1]]);            
             };
         };
 
-        tagArr.filter((x, i)=> x != arr.map(y => y[0].toLowerCase())[i]).map(x => arr.push([x, '#dddddd']));
+        tagArr.filter((x, i) =>
+            x != arr.map(y => y[0].toLowerCase())[i])
+                .map(x => arr.push([x, '#dddddd']));
 
         const tagWrapperStr = [];
 
@@ -88,7 +90,7 @@ export class Post extends Color {
             const tags = `
             <div class="c-tag-box">
                 <div class="c-tag" style="border: solid 1px ${
-                    this.parseColor(arr[i][1], 'hex', 'rgb', null, null, 0.15)
+                    Kolorz.hexHighlight(arr[i][1], -.1)
                 }; background:${arr[i][1]}"></div>
                 <span>${arr[i][0]}</span>
             </div>`;
