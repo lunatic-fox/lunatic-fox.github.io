@@ -8,7 +8,7 @@ export default [
         ID: 0,
         title: `Antvars`,
         description: `&nbsp&nbsp&nbsp&nbsp<b>FRISANCHO, 1981.</b> <br><br>&nbsp&nbsp&nbsp Dados de referência de medidas antropométricas de circunferência de braço, dobra cutânea tricipital e circunferência muscular de braço em pessoas do sexo feminino e masculino, na faixa etária de 1 a 74 anos, dentro dos seguintes percentis: 5, 10, 25, 50, 75, 90 e 95.`,
-        href: `https://joseliojunior.github.io/data/other/antvars.json5`,
+        href: `https://raw.githubusercontent.com/joseliojunior/joseliojunior.github.io/7b099fed74ef97d7e868277c721cfc176d3f442e/data/other/antvars.json5`,
         tags: `json5`
     },
 
@@ -16,7 +16,7 @@ export default [
         ID: 1,
         title: `Tsaf`,
         description: `&nbsp&nbsp&nbsp&nbsp<b>CEAGESP, 2019.</b> <br><br>&nbsp&nbsp&nbsp Tabela de sazonalidade dos produtos comercializados no ETSP (Entreposto Terminal São Paulo) entre 2015 e 2019.`,
-        href: `https://joseliojunior.github.io/data/other/tsaf.json5`,
+        href: `https://raw.githubusercontent.com/joseliojunior/joseliojunior.github.io/7b099fed74ef97d7e868277c721cfc176d3f442e/data/other/tsaf.json5`,
         tags: `json5`
     },
 
