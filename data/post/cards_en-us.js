@@ -15,7 +15,7 @@ export default [
     {
         ID: 2,
         title: `Github programming and markup language colors`,
-        description: `A web project to present all programming and markup language colors known by Github.`,
+        description: `A web project to present all languages colors known to Github.`,
         href: `https://joseliojunior.github.io/github-colors/`,
         tags: `javascript, html, css`
     },

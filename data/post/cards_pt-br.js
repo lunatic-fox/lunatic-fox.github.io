@@ -22,7 +22,7 @@ export default [
     {
         ID: 2,
         title: `Cores das linguagens de programação e marcação do Github`,
-        description: `Um projeto web para apresentar todas as cores das linguagens de programação e marcação conhecidas pelo Github.`,
+        description: `Um projeto web para apresentar todas as cores das linguagens conhecidas pelo Github.`,
         href: `https://joseliojunior.github.io/github-colors/`,
         tags: `javascript, html, css`
     },
