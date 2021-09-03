@@ -101,7 +101,7 @@ export class Post {
 
         const htmlString = `
         <article>
-            <a href="${href ?? '#'}">
+            <a href="${href ?? '#'}" target="_blank">
                 <div class="c-title">${title ?? ''}</div>
             </a>
             <div class="c-description">${description ?? ''}</div>

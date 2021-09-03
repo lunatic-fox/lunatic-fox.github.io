@@ -3,7 +3,6 @@
  * @copyright Josélio de S. C. Júnior 2021
  */
 export default [
-
     {
         ID: 0,
         title: `Antvars`,
@@ -62,5 +61,49 @@ export default [
         </p>`,
         href: `https://joseliojunior.github.io/netflix-clone/`,
         tags: `javascript, html, css`
+    },
+
+    {
+        ID: 6,
+        title: `Lua Extensions`,
+        description: `
+        <p>
+            Algumas extensões feitas por mim para a linguagem Lua.
+        </p>`,
+        href: `https://github.com/joseliojunior/lua-extensions`,
+        tags: `lua`
+    },
+
+    {
+        ID: 7,
+        title: `Restaurant Finder`,
+        description: `
+        <p>
+            Um dos projetos propostos pela DIO (Digital Innovation One) no bootcamp MRV front-end SPA developer.
+        </p>`,
+        href: `https://starlightrestaurantfinder.netlify.app/`,
+        tags: `javascript, html`
+    },
+
+    {
+        ID: 8,
+        title: `GitHub Interface App`,
+        description: `
+        <p>
+            Um dos projetos propostos pela DIO (Digital Innovation One) no bootcamp MRV front-end SPA developer.
+        </p>`,
+        href: `https://joseliojunior.github.io/github-interface-app/`,
+        tags: `javascript, html`
+    },
+
+    {
+        ID: 9,
+        title: `GitHub Interface App +`,
+        description: `
+        <p>
+            Um dos projetos propostos pela DIO (Digital Innovation One) no bootcamp MRV front-end SPA developer + o projeto <a href="https://joseliojunior.github.io/github-colors/" target="_blank">Github Colors</a>.
+        </p>`,
+        href: `https://joseliojunior.github.io/github-interface-app/`,
+        tags: `javascript, html`
     }
 ]
