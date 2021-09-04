@@ -220,6 +220,6 @@ export class Kolorz {
 
         const c = this.hex(color, 'hsl').replace(/[hsl( )%]/g, '').split(',').map(e => +e);
         const l = +(lightness * 100).toFixed();
-        return `hsl(${c.slice(0, 2)}%,${c[2] >= 35 ? c[2] - l : c[2] + l}%)`;
+        return `hsl(${c.slice(0, 2)}%,${c[2] >= 90 ? c[2] - (l + 30) : c[2] >= 65 ? c[2] - (l + 10) : c[2] >= 35 ? c[2] - l : c[2] + l}%)`;
     }
 }
