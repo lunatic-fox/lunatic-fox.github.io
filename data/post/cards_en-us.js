@@ -104,7 +104,7 @@ export default [
         <p>
             One of the projects proposed by DIO (Digital Innovation One) in the SPA front-end developer MRV bootcamp + the <a href="https://joseliojunior.github.io/github-colors/" target="_blank">Github Colors</a> project.
         </p>`,
-        href: `https://joseliojunior.github.io/github-interface-app/`,
+        href: `https://joseliojunior.github.io/github-interface-app-plus/`,
         tags: `javascript, html`
     }
 ]
