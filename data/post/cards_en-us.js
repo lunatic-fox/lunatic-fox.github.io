@@ -106,5 +106,16 @@ export default [
         </p>`,
         href: `https://joseliojunior.github.io/github-interface-app-plus/`,
         tags: `javascript, html`
+    },
+
+    {
+        ID: 10,
+        title: `Geniuz`,
+        description: `
+        <p>
+            One of the projects proposed by DIO (Digital Innovation One) in the Eduzz fullstack developer bootcamp of Genius game (Simon).
+        </p>`,
+        href: `https://joseliojunior.github.io/geniuz/`,
+        tags: `css, javascript, html`
     }
 ]
